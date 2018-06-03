@@ -1,0 +1,194 @@
+06-03 17:52:51.082 192.168.1.33:54321    6756   #r thread INFO: Sparkling Water version: 2.2.16
+06-03 17:52:51.090 192.168.1.33:54321    6756   #r thread INFO: Spark version: 2.2.1
+06-03 17:52:51.090 192.168.1.33:54321    6756   #r thread INFO: Integrated H2O version: 3.18.0.10
+06-03 17:52:51.090 192.168.1.33:54321    6756   #r thread INFO: The following Spark configuration is used: 
+06-03 17:52:51.090 192.168.1.33:54321    6756   #r thread INFO:     (spark.ext.h2o.client.log.dir,/home/cansu/NetBeansProjects/BIGDATAPROJE/dist/h2ologs/local-1528037569581)
+06-03 17:52:51.090 192.168.1.33:54321    6756   #r thread INFO:     (spark.executor.id,driver)
+06-03 17:52:51.090 192.168.1.33:54321    6756   #r thread INFO:     (spark.driver.host,192.168.1.33)
+06-03 17:52:51.090 192.168.1.33:54321    6756   #r thread INFO:     (spark.executor.memory,5g)
+06-03 17:52:51.090 192.168.1.33:54321    6756   #r thread INFO:     (spark.ext.h2o.client.ip,192.168.1.33)
+06-03 17:52:51.090 192.168.1.33:54321    6756   #r thread INFO:     (spark.driver.memory,5g)
+06-03 17:52:51.090 192.168.1.33:54321    6756   #r thread INFO:     (spark.app.id,local-1528037569581)
+06-03 17:52:51.090 192.168.1.33:54321    6756   #r thread INFO:     (spark.ui.port,7077)
+06-03 17:52:51.090 192.168.1.33:54321    6756   #r thread INFO:     (spark.locality.wait,30000)
+06-03 17:52:51.090 192.168.1.33:54321    6756   #r thread INFO:     (spark.rdd.compress,True)
+06-03 17:52:51.090 192.168.1.33:54321    6756   #r thread INFO:     (spark.app.name,PCA)
+06-03 17:52:51.090 192.168.1.33:54321    6756   #r thread INFO:     (spark.serializer.objectStreamReset,100)
+06-03 17:52:51.090 192.168.1.33:54321    6756   #r thread INFO:     (spark.master,local[*])
+06-03 17:52:51.090 192.168.1.33:54321    6756   #r thread INFO:     (spark.submit.deployMode,client)
+06-03 17:52:51.090 192.168.1.33:54321    6756   #r thread INFO:     (spark.ext.h2o.cloud.name,sparkling-water-cansu_local-1528037569581)
+06-03 17:52:51.090 192.168.1.33:54321    6756   #r thread INFO:     (spark.driver.port,37425)
+06-03 17:52:51.090 192.168.1.33:54321    6756   #r thread INFO: 
+06-03 17:52:51.090 192.168.1.33:54321    6756   #r thread INFO: Found XGBoost backend with library: xgboost4j_gpu
+06-03 17:52:51.090 192.168.1.33:54321    6756   #r thread INFO: XGBoost supported backends: [WITH_GPU, WITH_OMP]
+06-03 17:52:51.090 192.168.1.33:54321    6756   #r thread INFO: ----- H2O started  -----
+06-03 17:52:51.091 192.168.1.33:54321    6756   #r thread INFO: Build git branch: rel-wolpert
+06-03 17:52:51.091 192.168.1.33:54321    6756   #r thread INFO: Build git hash: b26ef10d0f1b4dd26b8227c1672ee47e0e893fec
+06-03 17:52:51.091 192.168.1.33:54321    6756   #r thread INFO: Build git describe: jenkins-3.18.0.9-19-gb26ef10
+06-03 17:52:51.091 192.168.1.33:54321    6756   #r thread INFO: Build age: 12 days
+06-03 17:52:51.091 192.168.1.33:54321    6756   #r thread INFO: Built by: 'jenkins'
+06-03 17:52:51.091 192.168.1.33:54321    6756   #r thread INFO: Built on: '2018-05-22 08:13:35'
+06-03 17:52:51.091 192.168.1.33:54321    6756   #r thread INFO: StackTraceCollector Build git branch: (unknown)
+06-03 17:52:51.091 192.168.1.33:54321    6756   #r thread INFO: StackTraceCollector Build git hash: (unknown)
+06-03 17:52:51.091 192.168.1.33:54321    6756   #r thread INFO: StackTraceCollector Build git describe: (unknown)
+06-03 17:52:51.091 192.168.1.33:54321    6756   #r thread INFO: StackTraceCollector Build project version: (unknown)
+06-03 17:52:51.091 192.168.1.33:54321    6756   #r thread INFO: StackTraceCollector Built by: (unknown)
+06-03 17:52:51.091 192.168.1.33:54321    6756   #r thread INFO: StackTraceCollector Built on: (unknown)
+06-03 17:52:51.092 192.168.1.33:54321    6756   #r thread INFO: Watchdog Build git branch: (unknown)
+06-03 17:52:51.092 192.168.1.33:54321    6756   #r thread INFO: Watchdog Build git hash: (unknown)
+06-03 17:52:51.092 192.168.1.33:54321    6756   #r thread INFO: Watchdog Build git describe: (unknown)
+06-03 17:52:51.092 192.168.1.33:54321    6756   #r thread INFO: Watchdog Build project version: (unknown)
+06-03 17:52:51.092 192.168.1.33:54321    6756   #r thread INFO: Watchdog Built by: (unknown)
+06-03 17:52:51.092 192.168.1.33:54321    6756   #r thread INFO: Watchdog Built on: (unknown)
+06-03 17:52:51.092 192.168.1.33:54321    6756   #r thread INFO: XGBoost Build git branch: (unknown)
+06-03 17:52:51.092 192.168.1.33:54321    6756   #r thread INFO: XGBoost Build git hash: (unknown)
+06-03 17:52:51.092 192.168.1.33:54321    6756   #r thread INFO: XGBoost Build git describe: (unknown)
+06-03 17:52:51.092 192.168.1.33:54321    6756   #r thread INFO: XGBoost Build project version: (unknown)
+06-03 17:52:51.092 192.168.1.33:54321    6756   #r thread INFO: XGBoost Built by: (unknown)
+06-03 17:52:51.093 192.168.1.33:54321    6756   #r thread INFO: XGBoost Built on: (unknown)
+06-03 17:52:51.093 192.168.1.33:54321    6756   #r thread INFO: Processed H2O arguments: [-name, sparkling-water-cansu_local-1528037569581, -log_level, INFO, -baseport, 54321, -ip, 192.168.1.33, -log_dir, /home/cansu/NetBeansProjects/BIGDATAPROJE/dist/h2ologs/local-1528037569581]
+06-03 17:52:51.093 192.168.1.33:54321    6756   #r thread INFO: Java availableProcessors: 8
+06-03 17:52:51.093 192.168.1.33:54321    6756   #r thread INFO: Java heap totalMemory: 231.0 MB
+06-03 17:52:51.093 192.168.1.33:54321    6756   #r thread INFO: Java heap maxMemory: 4.44 GB
+06-03 17:52:51.093 192.168.1.33:54321    6756   #r thread INFO: Java version: Java 1.8.0_171 (from Oracle Corporation)
+06-03 17:52:51.093 192.168.1.33:54321    6756   #r thread INFO: JVM launch parameters: [-Xmx5g]
+06-03 17:52:51.093 192.168.1.33:54321    6756   #r thread INFO: OS version: Linux 4.13.0-43-generic (amd64)
+06-03 17:52:51.093 192.168.1.33:54321    6756   #r thread INFO: Machine physical memory: 11.61 GB
+06-03 17:52:51.093 192.168.1.33:54321    6756   #r thread INFO: X-h2o-cluster-id: 1528037570013
+06-03 17:52:51.093 192.168.1.33:54321    6756   #r thread INFO: User name: 'cansu'
+06-03 17:52:51.093 192.168.1.33:54321    6756   #r thread INFO: IPv6 stack selected: false
+06-03 17:52:51.093 192.168.1.33:54321    6756   #r thread INFO: Possible IP Address: wlp4s0 (wlp4s0), fe80:0:0:0:9c0b:c722:fb72:ef3b%wlp4s0
+06-03 17:52:51.094 192.168.1.33:54321    6756   #r thread INFO: Possible IP Address: wlp4s0 (wlp4s0), 192.168.1.38
+06-03 17:52:51.094 192.168.1.33:54321    6756   #r thread INFO: Possible IP Address: enp5s0 (enp5s0), fe80:0:0:0:dc95:c5bc:c10e:1ae0%enp5s0
+06-03 17:52:51.094 192.168.1.33:54321    6756   #r thread INFO: Possible IP Address: enp5s0 (enp5s0), 192.168.1.33
+06-03 17:52:51.094 192.168.1.33:54321    6756   #r thread INFO: Possible IP Address: lo (lo), 0:0:0:0:0:0:0:1%lo
+06-03 17:52:51.094 192.168.1.33:54321    6756   #r thread INFO: Possible IP Address: lo (lo), 127.0.0.1
+06-03 17:52:51.094 192.168.1.33:54321    6756   #r thread INFO: H2O node running in unencrypted mode.
+06-03 17:52:51.097 192.168.1.33:54321    6756   #r thread INFO: Internal communication uses port: 54322
+06-03 17:52:51.097 192.168.1.33:54321    6756   #r thread INFO: Listening for HTTP and REST traffic on http://192.168.1.33:54321/
+06-03 17:52:51.127 192.168.1.33:54321    6756   #r thread INFO: H2O cloud name: 'sparkling-water-cansu_local-1528037569581' on /192.168.1.33:54321, discovery address /226.251.181.129:58107
+06-03 17:52:51.127 192.168.1.33:54321    6756   #r thread INFO: If you have trouble connecting, try SSH tunneling from your local machine (e.g., via port 55555):
+06-03 17:52:51.127 192.168.1.33:54321    6756   #r thread INFO:   1. Open a terminal and run 'ssh -L 55555:localhost:54321 cansu@192.168.1.33'
+06-03 17:52:51.127 192.168.1.33:54321    6756   #r thread INFO:   2. Point your browser to http://localhost:55555
+06-03 17:52:51.302 192.168.1.33:54321    6756   #r thread INFO: Log dir: '/home/cansu/NetBeansProjects/BIGDATAPROJE/dist/h2ologs/local-1528037569581'
+06-03 17:52:51.302 192.168.1.33:54321    6756   #r thread INFO: Cur dir: '/home/cansu/NetBeansProjects/BIGDATAPROJE/dist'
+06-03 17:52:51.309 192.168.1.33:54321    6756   #r thread INFO: Using HDFS configuration from /usr/local/hadoop/hadoop-2.7.0/conf
+06-03 17:52:51.309 192.168.1.33:54321    6756   #r thread INFO: HDFS subsystem successfully initialized
+06-03 17:52:51.314 192.168.1.33:54321    6756   #r thread INFO: S3 subsystem successfully initialized
+06-03 17:52:51.314 192.168.1.33:54321    6756   #r thread INFO: Flow dir: '/home/cansu/h2oflows'
+06-03 17:52:51.326 192.168.1.33:54321    6756   #r thread INFO: Cloud of size 1 formed [/192.168.1.33:54321]
+06-03 17:52:51.367 192.168.1.33:54321    6756   #r thread INFO: Registered parsers: [GUESS, ARFF, XLS, SVMLight, AVRO, ORC, PARQUET, CSV]
+06-03 17:52:51.368 192.168.1.33:54321    6756   #r thread INFO: StackTraceCollector extension initialized
+06-03 17:52:51.368 192.168.1.33:54321    6756   #r thread INFO: Watchdog extension initialized
+06-03 17:52:51.368 192.168.1.33:54321    6756   #r thread INFO: XGBoost extension initialized
+06-03 17:52:51.368 192.168.1.33:54321    6756   #r thread INFO: Registered 3 core extensions in: 146ms
+06-03 17:52:51.368 192.168.1.33:54321    6756   #r thread INFO: Registered H2O core extensions: [StackTraceCollector, Watchdog, XGBoost]
+06-03 17:52:51.720 192.168.1.33:54321    6756   #r thread INFO: Registered: 165 REST APIs in: 352ms
+06-03 17:52:51.720 192.168.1.33:54321    6756   #r thread INFO: Registered REST API extensions: [XGBoost, Algos, AutoML, Core V3, Core V4]
+06-03 17:52:51.839 192.168.1.33:54321    6756   #r thread INFO: Registered: 249 schemas in 119ms
+06-03 17:52:51.839 192.168.1.33:54321    6756   #r thread INFO: H2O started in 1033ms
+06-03 17:52:51.839 192.168.1.33:54321    6756   #r thread INFO: 
+06-03 17:52:51.839 192.168.1.33:54321    6756   #r thread INFO: Open H2O Flow in your web browser: http://192.168.1.33:54321
+06-03 17:52:51.839 192.168.1.33:54321    6756   #r thread INFO: 
+06-03 17:52:57.763 192.168.1.33:54321    6756   #6668-106 INFO: GET /3/Capabilities/API, parms: {}
+06-03 17:52:57.764 192.168.1.33:54321    6756   #6668-106 INFO: Locking cloud to new members, because water.api.schemas3.CapabilitiesV3
+06-03 17:52:58.008 192.168.1.33:54321    6756   #6668-107 INFO: GET /3/ImportFiles, parms: {path=hdfs://localhost:9000/user/cansu/winequality-red2.csv}
+06-03 17:52:58.012 192.168.1.33:54321    6756   #6668-107 INFO: ImportHDFS processing (hdfs://localhost:9000/user/cansu/winequality-red2.csv)
+06-03 17:52:58.627 192.168.1.33:54321    6756   #6668-108 INFO: POST /3/ParseSetup, parms: {source_frames=["hdfs://localhost:9000/user/cansu/winequality-red2.csv"], check_header=0}
+06-03 17:52:58.852 192.168.1.33:54321    6756   #6668-108 INFO: ParseSetup heuristic: cloudSize: 1, cores: 8, numCols: 12, maxLineLength: 64, totalSize: 84153, localParseSize: 84153, chunkSize: 4096, numChunks: 20, numChunks * cols: 240
+06-03 17:52:58.882 192.168.1.33:54321    6756   #6668-109 INFO: POST /3/Parse, parms: {number_columns=12, source_frames=["hdfs://localhost:9000/user/cansu/winequality-red2.csv"], column_types=["Numeric","Numeric","Numeric","Numeric","Numeric","Numeric","Numeric","Numeric","Numeric","Numeric","Numeric","Numeric"], single_quotes=False, parse_type=CSV, destination_frame=winequality_red2.hex, column_names=["fixed acidity","volatile acidity","citric acid","residual sugar","chlorides","free sulfur dioxide","total sulfur dioxide","density","pH","sulphates","alcohol","quality"], delete_on_done=True, check_header=1, separator=44, blocking=False, chunk_size=4096}
+06-03 17:52:58.888 192.168.1.33:54321    6756   #6668-109 INFO: Total file size: 82.2 KB
+06-03 17:52:58.914 192.168.1.33:54321    6756   #6668-109 INFO: Parse chunk size 4096
+06-03 17:52:59.079 192.168.1.33:54321    6756   FJ-1-15   INFO: Parse result for winequality_red2.hex (1599 rows):
+06-03 17:52:59.118 192.168.1.33:54321    6756   FJ-1-15   INFO:                 ColV2    type          min          max         mean        sigma         NAs constant cardinality
+06-03 17:52:59.119 192.168.1.33:54321    6756   FJ-1-15   INFO:         fixed acidity: numeric      4.60000      15.9000      8.31964      1.74110                            
+06-03 17:52:59.119 192.168.1.33:54321    6756   FJ-1-15   INFO:      volatile acidity: numeric     0.120000      1.58000     0.527821     0.179060                            
+06-03 17:52:59.119 192.168.1.33:54321    6756   FJ-1-15   INFO:           citric acid: numeric      0.00000      1.00000     0.270976     0.194801                            
+06-03 17:52:59.119 192.168.1.33:54321    6756   FJ-1-15   INFO:        residual sugar: numeric     0.900000      15.5000      2.53881      1.40993                            
+06-03 17:52:59.120 192.168.1.33:54321    6756   FJ-1-15   INFO:             chlorides: numeric    0.0120000     0.611000    0.0874665    0.0470653                            
+06-03 17:52:59.120 192.168.1.33:54321    6756   FJ-1-15   INFO:   free sulfur dioxide: numeric      1.00000      72.0000      15.8749      10.4602                            
+06-03 17:52:59.120 192.168.1.33:54321    6756   FJ-1-15   INFO:  total sulfur dioxide: numeric      6.00000      289.000      46.4678      32.8953                            
+06-03 17:52:59.120 192.168.1.33:54321    6756   FJ-1-15   INFO:               density: numeric     0.990070      1.00369     0.996747   0.00188733                            
+06-03 17:52:59.121 192.168.1.33:54321    6756   FJ-1-15   INFO:                    pH: numeric      2.74000      4.01000      3.31111     0.154386                            
+06-03 17:52:59.121 192.168.1.33:54321    6756   FJ-1-15   INFO:             sulphates: numeric     0.330000      2.00000     0.658149     0.169507                            
+06-03 17:52:59.121 192.168.1.33:54321    6756   FJ-1-15   INFO:               alcohol: numeric      8.40000      14.9000      10.4230      1.06567                            
+06-03 17:52:59.121 192.168.1.33:54321    6756   FJ-1-15   INFO:               quality: numeric      3.00000      8.00000      5.63602     0.807569                            
+06-03 17:52:59.142 192.168.1.33:54321    6756   FJ-1-15   INFO: Chunk compression summary:
+06-03 17:52:59.142 192.168.1.33:54321    6756   FJ-1-15   INFO:   Chunk Type                 Chunk Name       Count  Count Percentage        Size  Size Percentage
+06-03 17:52:59.142 192.168.1.33:54321    6756   FJ-1-15   INFO:          C1N  1-Byte Integers (w/o NAs)          58          23.016 %      8.2 KB         18.431 %
+06-03 17:52:59.142 192.168.1.33:54321    6756   FJ-1-15   INFO:          C1S           1-Byte Fractions         127          50.397 %     19.8 KB         44.813 %
+06-03 17:52:59.142 192.168.1.33:54321    6756   FJ-1-15   INFO:           C2            2-Byte Integers           1           0.397 %      222  B          0.490 %
+06-03 17:52:59.142 192.168.1.33:54321    6756   FJ-1-15   INFO:          C2S           2-Byte Fractions          63          25.000 %     14.6 KB         33.043 %
+06-03 17:52:59.142 192.168.1.33:54321    6756   FJ-1-15   INFO:          CUD               Unique Reals           3           1.190 %      1.4 KB          3.223 %
+06-03 17:52:59.142 192.168.1.33:54321    6756   FJ-1-15   INFO: Frame distribution summary:
+06-03 17:52:59.142 192.168.1.33:54321    6756   FJ-1-15   INFO:                           Size  Number of Rows  Number of Chunks per Column  Number of Chunks
+06-03 17:52:59.142 192.168.1.33:54321    6756   FJ-1-15   INFO: 192.168.1.33:54321     44.2 KB            1599                           21               252
+06-03 17:52:59.142 192.168.1.33:54321    6756   FJ-1-15   INFO:               mean     44.2 KB     1599.000000                    21.000000        252.000000
+06-03 17:52:59.142 192.168.1.33:54321    6756   FJ-1-15   INFO:                min     44.2 KB     1599.000000                    21.000000        252.000000
+06-03 17:52:59.142 192.168.1.33:54321    6756   FJ-1-15   INFO:                max     44.2 KB     1599.000000                    21.000000        252.000000
+06-03 17:52:59.142 192.168.1.33:54321    6756   FJ-1-15   INFO:             stddev        0  B        0.000000                     0.000000          0.000000
+06-03 17:52:59.142 192.168.1.33:54321    6756   FJ-1-15   INFO:              total     44.2 KB            1599                           21               252
+06-03 17:52:59.182 192.168.1.33:54321    6756   #6668-105 INFO: GET /3/Frames/winequality_red2.hex, parms: {column_offset=0, full_column_count=-1, row_count=10, row_offset=0, column_count=-1}
+06-03 17:52:59.235 192.168.1.33:54321    6756   #6668-106 INFO: GET /3/ImportFiles, parms: {path=hdfs://localhost:9000/user/cansu/winequality-red2.csv}
+06-03 17:52:59.236 192.168.1.33:54321    6756   #6668-106 INFO: ImportHDFS processing (hdfs://localhost:9000/user/cansu/winequality-red2.csv)
+06-03 17:52:59.246 192.168.1.33:54321    6756   #6668-107 INFO: POST /3/ParseSetup, parms: {source_frames=["hdfs://localhost:9000/user/cansu/winequality-red2.csv"], check_header=0}
+06-03 17:52:59.284 192.168.1.33:54321    6756   #6668-107 INFO: ParseSetup heuristic: cloudSize: 1, cores: 8, numCols: 12, maxLineLength: 64, totalSize: 84153, localParseSize: 84153, chunkSize: 4096, numChunks: 20, numChunks * cols: 240
+06-03 17:52:59.293 192.168.1.33:54321    6756   #6668-108 INFO: POST /3/Parse, parms: {number_columns=12, source_frames=["hdfs://localhost:9000/user/cansu/winequality-red2.csv"], column_types=["Numeric","Numeric","Numeric","Numeric","Numeric","Numeric","Numeric","Numeric","Numeric","Numeric","Numeric","Numeric"], single_quotes=False, parse_type=CSV, destination_frame=winequality_red21.hex, column_names=["fixed acidity","volatile acidity","citric acid","residual sugar","chlorides","free sulfur dioxide","total sulfur dioxide","density","pH","sulphates","alcohol","quality"], delete_on_done=True, check_header=1, separator=44, blocking=False, chunk_size=4096}
+06-03 17:52:59.294 192.168.1.33:54321    6756   #6668-108 INFO: Total file size: 82.2 KB
+06-03 17:52:59.295 192.168.1.33:54321    6756   #6668-108 INFO: Parse chunk size 4096
+06-03 17:52:59.387 192.168.1.33:54321    6756   FJ-1-15   INFO: Parse result for winequality_red21.hex (1599 rows):
+06-03 17:52:59.409 192.168.1.33:54321    6756   FJ-1-15   INFO:                 ColV2    type          min          max         mean        sigma         NAs constant cardinality
+06-03 17:52:59.413 192.168.1.33:54321    6756   FJ-1-15   INFO:         fixed acidity: numeric      4.60000      15.9000      8.31964      1.74110                            
+06-03 17:52:59.415 192.168.1.33:54321    6756   FJ-1-15   INFO:      volatile acidity: numeric     0.120000      1.58000     0.527821     0.179060                            
+06-03 17:52:59.415 192.168.1.33:54321    6756   FJ-1-15   INFO:           citric acid: numeric      0.00000      1.00000     0.270976     0.194801                            
+06-03 17:52:59.416 192.168.1.33:54321    6756   FJ-1-15   INFO:        residual sugar: numeric     0.900000      15.5000      2.53881      1.40993                            
+06-03 17:52:59.416 192.168.1.33:54321    6756   FJ-1-15   INFO:             chlorides: numeric    0.0120000     0.611000    0.0874665    0.0470653                            
+06-03 17:52:59.416 192.168.1.33:54321    6756   FJ-1-15   INFO:   free sulfur dioxide: numeric      1.00000      72.0000      15.8749      10.4602                            
+06-03 17:52:59.416 192.168.1.33:54321    6756   FJ-1-15   INFO:  total sulfur dioxide: numeric      6.00000      289.000      46.4678      32.8953                            
+06-03 17:52:59.417 192.168.1.33:54321    6756   FJ-1-15   INFO:               density: numeric     0.990070      1.00369     0.996747   0.00188733                            
+06-03 17:52:59.419 192.168.1.33:54321    6756   FJ-1-15   INFO:                    pH: numeric      2.74000      4.01000      3.31111     0.154386                            
+06-03 17:52:59.419 192.168.1.33:54321    6756   FJ-1-15   INFO:             sulphates: numeric     0.330000      2.00000     0.658149     0.169507                            
+06-03 17:52:59.420 192.168.1.33:54321    6756   FJ-1-15   INFO:               alcohol: numeric      8.40000      14.9000      10.4230      1.06567                            
+06-03 17:52:59.420 192.168.1.33:54321    6756   FJ-1-15   INFO:               quality: numeric      3.00000      8.00000      5.63602     0.807569                            
+06-03 17:52:59.428 192.168.1.33:54321    6756   FJ-1-15   INFO: Chunk compression summary:
+06-03 17:52:59.428 192.168.1.33:54321    6756   FJ-1-15   INFO:   Chunk Type                 Chunk Name       Count  Count Percentage        Size  Size Percentage
+06-03 17:52:59.428 192.168.1.33:54321    6756   FJ-1-15   INFO:          C1N  1-Byte Integers (w/o NAs)          58          23.016 %      8.2 KB         18.431 %
+06-03 17:52:59.428 192.168.1.33:54321    6756   FJ-1-15   INFO:          C1S           1-Byte Fractions         127          50.397 %     19.8 KB         44.813 %
+06-03 17:52:59.428 192.168.1.33:54321    6756   FJ-1-15   INFO:           C2            2-Byte Integers           1           0.397 %      222  B          0.490 %
+06-03 17:52:59.428 192.168.1.33:54321    6756   FJ-1-15   INFO:          C2S           2-Byte Fractions          63          25.000 %     14.6 KB         33.043 %
+06-03 17:52:59.428 192.168.1.33:54321    6756   FJ-1-15   INFO:          CUD               Unique Reals           3           1.190 %      1.4 KB          3.223 %
+06-03 17:52:59.428 192.168.1.33:54321    6756   FJ-1-15   INFO: Frame distribution summary:
+06-03 17:52:59.428 192.168.1.33:54321    6756   FJ-1-15   INFO:                           Size  Number of Rows  Number of Chunks per Column  Number of Chunks
+06-03 17:52:59.428 192.168.1.33:54321    6756   FJ-1-15   INFO: 192.168.1.33:54321     44.2 KB            1599                           21               252
+06-03 17:52:59.428 192.168.1.33:54321    6756   FJ-1-15   INFO:               mean     44.2 KB     1599.000000                    21.000000        252.000000
+06-03 17:52:59.428 192.168.1.33:54321    6756   FJ-1-15   INFO:                min     44.2 KB     1599.000000                    21.000000        252.000000
+06-03 17:52:59.428 192.168.1.33:54321    6756   FJ-1-15   INFO:                max     44.2 KB     1599.000000                    21.000000        252.000000
+06-03 17:52:59.428 192.168.1.33:54321    6756   FJ-1-15   INFO:             stddev        0  B        0.000000                     0.000000          0.000000
+06-03 17:52:59.428 192.168.1.33:54321    6756   FJ-1-15   INFO:              total     44.2 KB            1599                           21               252
+06-03 17:52:59.514 192.168.1.33:54321    6756   #6668-111 INFO: GET /3/Frames/winequality_red21.hex, parms: {column_offset=0, full_column_count=-1, row_count=10, row_offset=0, column_count=-1}
+06-03 17:52:59.526 192.168.1.33:54321    6756   #6668-105 INFO: GET /3/Frames/winequality_red2.hex, parms: {row_count=10}
+06-03 17:52:59.547 192.168.1.33:54321    6756   #6668-106 INFO: POST /3/ModelBuilders/pca, parms: {k=2, training_frame=winequality_red2.hex}
+06-03 17:52:59.638 192.168.1.33:54321    6756   FJ-1-15   INFO: Building H2O PCA model with these parameters:
+06-03 17:52:59.657 192.168.1.33:54321    6756   FJ-1-15   INFO: {"_train":{"name":"winequality_red2.hex","type":"Key"},"_valid":null,"_nfolds":0,"_keep_cross_validation_predictions":false,"_keep_cross_validation_fold_assignment":false,"_parallelize_cross_validation":true,"_auto_rebalance":true,"_seed":-1,"_fold_assignment":"AUTO","_categorical_encoding":"AUTO","_max_categorical_levels":10,"_distribution":"AUTO","_tweedie_power":1.5,"_quantile_alpha":0.5,"_huber_alpha":0.9,"_ignored_columns":null,"_ignore_const_cols":true,"_weights_column":null,"_offset_column":null,"_fold_column":null,"_is_cv_model":false,"_score_each_iteration":false,"_max_runtime_secs":0.0,"_stopping_rounds":0,"_stopping_metric":"AUTO","_stopping_tolerance":0.001,"_response_column":null,"_balance_classes":false,"_max_after_balance_size":5.0,"_class_sampling_factors":null,"_max_confusion_matrix_size":20,"_checkpoint":null,"_pretrained_autoencoder":null,"_custom_metric_func":null,"_transform":"NONE","_pca_method":"GramSVD","_k":2,"_max_iterations":1000,"_use_all_factor_levels":false,"_compute_metrics":true,"_impute_missing":false}
+06-03 17:52:59.663 192.168.1.33:54321    6756   FJ-1-15   INFO: train dataset already contains 21 (non-empty)  chunks. No need to rebalance. [desiredChunks=2, rebalanceRatio=1.0]
+06-03 17:52:59.686 192.168.1.33:54321    6756   FJ-1-15   WARN: _train: Dataset used may contain fewer number of rows due to removal of rows with NA/missing values.  If this is not desirable, set impute_missing argument in pca call to TRUE/True/true/... depending on the client language.
+06-03 17:52:59.879 192.168.1.33:54321    6756   #6668-109 INFO: GET /3/Models/PCA_model_python_1528037570013_1, parms: {}
+06-03 17:52:59.923 192.168.1.33:54321    6756   #6668-110 INFO: POST /3/ModelBuilders/pca, parms: {k=2, training_frame=winequality_red2.hex}
+06-03 17:52:59.926 192.168.1.33:54321    6756   FJ-1-15   INFO: Building H2O PCA model with these parameters:
+06-03 17:52:59.926 192.168.1.33:54321    6756   FJ-1-15   INFO: {"_train":{"name":"winequality_red2.hex","type":"Key"},"_valid":null,"_nfolds":0,"_keep_cross_validation_predictions":false,"_keep_cross_validation_fold_assignment":false,"_parallelize_cross_validation":true,"_auto_rebalance":true,"_seed":-1,"_fold_assignment":"AUTO","_categorical_encoding":"AUTO","_max_categorical_levels":10,"_distribution":"AUTO","_tweedie_power":1.5,"_quantile_alpha":0.5,"_huber_alpha":0.9,"_ignored_columns":null,"_ignore_const_cols":true,"_weights_column":null,"_offset_column":null,"_fold_column":null,"_is_cv_model":false,"_score_each_iteration":false,"_max_runtime_secs":0.0,"_stopping_rounds":0,"_stopping_metric":"AUTO","_stopping_tolerance":0.001,"_response_column":null,"_balance_classes":false,"_max_after_balance_size":5.0,"_class_sampling_factors":null,"_max_confusion_matrix_size":20,"_checkpoint":null,"_pretrained_autoencoder":null,"_custom_metric_func":null,"_transform":"NONE","_pca_method":"GramSVD","_k":2,"_max_iterations":1000,"_use_all_factor_levels":false,"_compute_metrics":true,"_impute_missing":false}
+06-03 17:52:59.926 192.168.1.33:54321    6756   FJ-1-15   INFO: train dataset already contains 21 (non-empty)  chunks. No need to rebalance. [desiredChunks=2, rebalanceRatio=1.0]
+06-03 17:52:59.927 192.168.1.33:54321    6756   FJ-1-15   WARN: _train: Dataset used may contain fewer number of rows due to removal of rows with NA/missing values.  If this is not desirable, set impute_missing argument in pca call to TRUE/True/true/... depending on the client language.
+06-03 17:53:00.154 192.168.1.33:54321    6756   #6668-106 INFO: GET /3/Models/PCA_model_python_1528037570013_2, parms: {}
+06-03 17:53:00.163 192.168.1.33:54321    6756   #6668-107 INFO: POST /3/ModelBuilders/pca, parms: {k=2, training_frame=winequality_red2.hex}
+06-03 17:53:00.168 192.168.1.33:54321    6756   FJ-1-15   INFO: Building H2O PCA model with these parameters:
+06-03 17:53:00.168 192.168.1.33:54321    6756   FJ-1-15   INFO: {"_train":{"name":"winequality_red2.hex","type":"Key"},"_valid":null,"_nfolds":0,"_keep_cross_validation_predictions":false,"_keep_cross_validation_fold_assignment":false,"_parallelize_cross_validation":true,"_auto_rebalance":true,"_seed":-1,"_fold_assignment":"AUTO","_categorical_encoding":"AUTO","_max_categorical_levels":10,"_distribution":"AUTO","_tweedie_power":1.5,"_quantile_alpha":0.5,"_huber_alpha":0.9,"_ignored_columns":null,"_ignore_const_cols":true,"_weights_column":null,"_offset_column":null,"_fold_column":null,"_is_cv_model":false,"_score_each_iteration":false,"_max_runtime_secs":0.0,"_stopping_rounds":0,"_stopping_metric":"AUTO","_stopping_tolerance":0.001,"_response_column":null,"_balance_classes":false,"_max_after_balance_size":5.0,"_class_sampling_factors":null,"_max_confusion_matrix_size":20,"_checkpoint":null,"_pretrained_autoencoder":null,"_custom_metric_func":null,"_transform":"NONE","_pca_method":"GramSVD","_k":2,"_max_iterations":1000,"_use_all_factor_levels":false,"_compute_metrics":true,"_impute_missing":false}
+06-03 17:53:00.168 192.168.1.33:54321    6756   FJ-1-15   INFO: train dataset already contains 21 (non-empty)  chunks. No need to rebalance. [desiredChunks=2, rebalanceRatio=1.0]
+06-03 17:53:00.169 192.168.1.33:54321    6756   FJ-1-15   WARN: _train: Dataset used may contain fewer number of rows due to removal of rows with NA/missing values.  If this is not desirable, set impute_missing argument in pca call to TRUE/True/true/... depending on the client language.
+06-03 17:53:00.393 192.168.1.33:54321    6756   #6668-110 INFO: GET /3/Models/PCA_model_python_1528037570013_3, parms: {}
+06-03 17:53:00.404 192.168.1.33:54321    6756   #6668-111 INFO: POST /4/Predictions/models/PCA_model_python_1528037570013_3/frames/winequality_red2.hex, parms: {}
+06-03 17:53:00.419 192.168.1.33:54321    6756   #6668-106 INFO: GET /3/Frames/predictions_91ea_PCA_model_python_1528037570013_3_on_winequality_red2.hex, parms: {column_offset=0, full_column_count=-1, row_count=10, row_offset=0, column_count=-1}
+06-03 17:53:00.781 192.168.1.33:54321    6756   #6668-107 INFO: GET /, parms: {}
+06-03 17:53:00.788 192.168.1.33:54321    6756   #6668-107 INFO: GET /flow/index.html, parms: {}
+06-03 17:53:00.788 192.168.1.33:54321    6756   #6668-107 INFO: Trying to load resource /flow/index.html via classloader sun.misc.Launcher$AppClassLoader@6267c3bb
+06-03 17:53:00.789 192.168.1.33:54321    6756   #6668-107 INFO: Trying to load resource /flow/index.html via classloader org.apache.spark.util.MutableURLClassLoader@42b2501
+06-03 17:53:00.796 192.168.1.33:54321    6756   #6668-108 INFO: POST /3/Shutdown, parms: {}

@@ -13,8 +13,6 @@ import java.io.Serializable;
 import java.util.concurrent.CountDownLatch;
 import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
-import org.apache.spark.launcher.SparkAppHandle;
-import org.apache.spark.launcher.SparkLauncher;
 
 /**
  *

@@ -514,10 +514,9 @@
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jLabel3" pref="238" max="32767" attributes="0"/>
                               <Component id="jLabel12" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextField5" alignment="0" max="32767" attributes="0"/>
+                              <Component id="numOfResult" alignment="0" max="32767" attributes="0"/>
                               <Component id="jLabel13" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextField6" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jComboBox3" alignment="0" max="32767" attributes="0"/>
+                              <Component id="infoGainThreshold" alignment="0" max="32767" attributes="0"/>
                               <Component id="infoGainButton" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
@@ -542,22 +541,20 @@
                                   <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                                   <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="numOfResult" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField6" min="-2" max="-2" attributes="0"/>
+                                  <Component id="infoGainThreshold" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jComboBox3" min="-2" pref="30" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                   <Component id="infoGainButton" min="-2" pref="37" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jScrollPane3" max="32767" attributes="0"/>
+                              <Component id="jScrollPane3" min="-2" pref="252" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel17" min="-2" pref="27" max="-2" attributes="0"/>
@@ -575,36 +572,18 @@
                     <Property name="text" type="java.lang.String" value="INFORMATION GAIN"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField5">
+                <Component class="javax.swing.JTextField" name="numOfResult">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Default: -1"/>
+                    <Property name="text" type="java.lang.String" value="-1"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField5ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="numOfResultActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField6">
+                <Component class="javax.swing.JTextField" name="infoGainThreshold">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Default: -1"/>
+                    <Property name="text" type="java.lang.String" value="-1"/>
                   </Properties>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox3">
-                  <Properties>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="1 Node"/>
-                        <StringItem index="1" value="2 Node"/>
-                        <StringItem index="2" value="4 Node"/>
-                        <StringItem index="3" value="8 Node"/>
-                      </StringArray>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox3ActionPerformed"/>
-                  </Events>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
                 </Component>
                 <Component class="javax.swing.JButton" name="infoGainButton">
                   <Properties>
@@ -701,7 +680,6 @@
                               <Component id="jLabel4" pref="296" max="32767" attributes="0"/>
                               <Component id="jLabel36" alignment="0" max="32767" attributes="0"/>
                               <Component id="pcaNumberofK" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jComboBox4" alignment="0" max="32767" attributes="0"/>
                               <Component id="PCAButton" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
@@ -736,8 +714,6 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="pcaNumberofK" min="-2" pref="30" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jComboBox4" min="-2" pref="30" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                   <Component id="PCAButton" min="-2" pref="37" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
@@ -753,24 +729,6 @@
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Principal Component Analysis (PCA)"/>
                   </Properties>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox4">
-                  <Properties>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="1 Node"/>
-                        <StringItem index="1" value="2 Node"/>
-                        <StringItem index="2" value="4 Node"/>
-                        <StringItem index="3" value="8 Node"/>
-                      </StringArray>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox4ActionPerformed"/>
-                  </Events>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
                 </Component>
                 <Component class="javax.swing.JButton" name="PCAButton">
                   <Properties>
@@ -1185,13 +1143,12 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="jComboBox7" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextField14" alignment="0" max="32767" attributes="0"/>
+                              <Component id="aprioriMinConfidence" alignment="0" max="32767" attributes="0"/>
                               <Component id="jLabel28" alignment="0" pref="151" max="32767" attributes="0"/>
                               <Component id="jLabel27" alignment="0" max="32767" attributes="0"/>
                               <Component id="jLabel7" alignment="0" max="32767" attributes="0"/>
                               <Component id="aprioriButton" max="32767" attributes="0"/>
-                              <Component id="jTextField13" alignment="0" max="32767" attributes="0"/>
+                              <Component id="aprioriMinSupport" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -1203,11 +1160,10 @@
                                   <EmptySpace type="separate" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="fpGrowthButton" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jComboBox10" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel30" alignment="0" pref="151" max="32767" attributes="0"/>
-                                      <Component id="jTextField20" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="fpgrowthMinConfidence" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel29" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField19" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="fpgrowthMinSupport" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel26" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -1241,9 +1197,7 @@
                                                   <EmptySpace min="134" pref="134" max="-2" attributes="0"/>
                                                   <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                                                  <Component id="jTextField20" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                                  <Component id="jComboBox10" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <Component id="fpgrowthMinConfidence" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -1253,10 +1207,10 @@
                                                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                                   <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="jTextField19" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="fpgrowthMinSupport" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="fpGrowthButton" min="-2" pref="37" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
                                       </Group>
@@ -1276,15 +1230,14 @@
                                           <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                                           <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                                          <Component id="jTextField13" min="-2" max="-2" attributes="0"/>
+                                          <Component id="aprioriMinSupport" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                                          <Component id="jTextField14" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                          <Component id="jComboBox7" min="-2" pref="30" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                          <Component id="aprioriMinConfidence" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                           <Component id="aprioriButton" min="-2" pref="37" max="-2" attributes="0"/>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -1313,41 +1266,26 @@
                     <Property name="text" type="java.lang.String" value="APRIORI"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField13">
+                <Component class="javax.swing.JTextField" name="aprioriMinSupport">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Default: %35"/>
+                    <Property name="text" type="java.lang.String" value="50"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField13ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="aprioriMinSupportActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField14">
+                <Component class="javax.swing.JTextField" name="aprioriMinConfidence">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Default: %70"/>
+                    <Property name="text" type="java.lang.String" value="50"/>
                   </Properties>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox7">
-                  <Properties>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="1 Node"/>
-                        <StringItem index="1" value="2 Node"/>
-                        <StringItem index="2" value="4 Node"/>
-                        <StringItem index="3" value="8 Node"/>
-                      </StringArray>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox7ActionPerformed"/>
-                  </Events>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
                 </Component>
                 <Component class="javax.swing.JButton" name="aprioriButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="GET RESULT"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="aprioriButtonActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel26">
                   <Properties>
@@ -1355,45 +1293,31 @@
                     <Property name="text" type="java.lang.String" value="FP-Growth"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField19">
+                <Component class="javax.swing.JTextField" name="fpgrowthMinSupport">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Default: %35"/>
+                    <Property name="text" type="java.lang.String" value="50"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField19ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fpgrowthMinSupportActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField20">
+                <Component class="javax.swing.JTextField" name="fpgrowthMinConfidence">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Default: %70"/>
+                    <Property name="text" type="java.lang.String" value="50"/>
                   </Properties>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox10">
-                  <Properties>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="1 Node"/>
-                        <StringItem index="1" value="2 Node"/>
-                        <StringItem index="2" value="4 Node"/>
-                        <StringItem index="3" value="8 Node"/>
-                      </StringArray>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox10ActionPerformed"/>
-                  </Events>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
                 </Component>
                 <Component class="javax.swing.JButton" name="fpGrowthButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="GET RESULT"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fpGrowthButtonActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel27">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Minimum Support"/>
+                    <Property name="text" type="java.lang.String" value="Minimum Support (%)"/>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel28">
@@ -1403,7 +1327,8 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel29">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Minimum Support"/>
+                    <Property name="text" type="java.lang.String" value="Minimum Support (%)"/>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel30">
@@ -1423,7 +1348,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="jTextArea9">
+                    <Component class="javax.swing.JTextArea" name="aprioriResultTerminal">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
@@ -1443,7 +1368,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="jTextArea11">
+                    <Component class="javax.swing.JTextArea" name="aprioriDurationTerminal">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
@@ -1463,7 +1388,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="jTextArea12">
+                    <Component class="javax.swing.JTextArea" name="fpGrowthResultTerminal">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
@@ -1483,7 +1408,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="jTextArea13">
+                    <Component class="javax.swing.JTextArea" name="fpGrowthDurationTerminal">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
@@ -1528,20 +1453,22 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel56" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="jLabel56" alignment="1" min="-2" pref="240" max="-2" attributes="0"/>
                               <Component id="jLabel8" min="-2" pref="240" max="-2" attributes="0"/>
-                              <Component id="jTextField17" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
-                              <Component id="jLabel57" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
-                              <Component id="jTextField18" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
-                              <Component id="jLabel58" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
-                              <Component id="jTextField25" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
-                              <Component id="jLabel59" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
-                              <Component id="jTextField26" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
-                              <Component id="jLabel60" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
-                              <Component id="jTextField15" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
-                              <Component id="jLabel61" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
-                              <Component id="jTextField16" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
-                              <Component id="stackingButton" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="numOfTrees" alignment="1" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="jLabel57" alignment="1" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="maxDepth" alignment="1" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="jLabel58" alignment="1" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="minRows" alignment="1" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="jLabel59" alignment="1" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="learnRate" alignment="1" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="jLabel60" alignment="1" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="numOfFold" alignment="1" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="jLabel61" alignment="1" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="seed" alignment="1" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="stackingButton" alignment="1" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="jLabel16" alignment="1" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="stackingResponse" min="-2" pref="240" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
@@ -1559,52 +1486,55 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jLabel8" max="32767" attributes="0"/>
+                              <Component id="jLabel22" pref="21" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="jLabel22" min="-2" pref="21" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane21" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabel8" min="-2" pref="40" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel56" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jTextField17" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="numOfTrees" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel57" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField18" min="-2" max="-2" attributes="0"/>
+                                  <Component id="maxDepth" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel58" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField25" min="-2" max="-2" attributes="0"/>
+                                  <Component id="minRows" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel59" min="-2" pref="17" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField26" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="learnRate" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel60" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField15" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="numOfFold" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                                   <Component id="jLabel61" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField16" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="stackingButton" min="-2" pref="37" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
+                              <Component id="jScrollPane21" min="-2" pref="310" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane10" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="seed" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="stackingResponse" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="stackingButton" min="-2" pref="37" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1616,23 +1546,26 @@
                     <Property name="text" type="java.lang.String" value="STACKED ENSEMBLE"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField15">
+                <Component class="javax.swing.JTextField" name="numOfFold">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Default: 5"/>
+                    <Property name="text" type="java.lang.String" value="5"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField15ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="numOfFoldActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField16">
+                <Component class="javax.swing.JTextField" name="seed">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Default: 1"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="stackingButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="GET RESULT"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="stackingButtonActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel22">
                   <Properties>
@@ -1646,7 +1579,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="jTextArea10">
+                    <Component class="javax.swing.JTextArea" name="stackingDurationTerminal">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
@@ -1666,7 +1599,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="jTextArea21">
+                    <Component class="javax.swing.JTextArea" name="stackingResultTerminal">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
@@ -1679,9 +1612,9 @@
                     <Property name="text" type="java.lang.String" value="Number of trees"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField17">
+                <Component class="javax.swing.JTextField" name="numOfTrees">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Default: 50"/>
+                    <Property name="text" type="java.lang.String" value="50"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel57">
@@ -1689,9 +1622,9 @@
                     <Property name="text" type="java.lang.String" value="Maximum depth"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField18">
+                <Component class="javax.swing.JTextField" name="maxDepth">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Default: 3"/>
+                    <Property name="text" type="java.lang.String" value="3"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel58">
@@ -1699,9 +1632,9 @@
                     <Property name="text" type="java.lang.String" value="Minimum rows"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField25">
+                <Component class="javax.swing.JTextField" name="minRows">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Default: 2"/>
+                    <Property name="text" type="java.lang.String" value="2"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel59">
@@ -1709,9 +1642,9 @@
                     <Property name="text" type="java.lang.String" value="Learn rate"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField26">
+                <Component class="javax.swing.JTextField" name="learnRate">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Default: 0.2"/>
+                    <Property name="text" type="java.lang.String" value="0.2"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel60">
@@ -1723,6 +1656,16 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Seed"/>
                   </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel16">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="response"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="stackingResponse">
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="stackingResponseActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -1741,18 +1684,33 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="showDatasetButton" max="32767" attributes="0"/>
-                          <Component id="datasetName" max="32767" attributes="0"/>
-                          <Component id="jLabel39" min="-2" pref="195" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel37" min="-2" pref="195" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="showDatasetButton" max="32767" attributes="0"/>
+                                  <Component id="datasetName" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="jLabel39" min="-2" pref="257" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jScrollPane22" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jLabel55" max="32767" attributes="0"/>
                           <Component id="jScrollPane20" pref="687" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="91" max="32767" attributes="0"/>
+                      <EmptySpace pref="86" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1762,17 +1720,21 @@
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       <Component id="jLabel55" min="-2" pref="28" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane20" min="-2" pref="307" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="jLabel39" min="-2" pref="28" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="datasetName" min="-2" pref="45" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="showDatasetButton" min="-2" pref="45" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jLabel37" min="-2" pref="26" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jScrollPane22" min="-2" pref="138" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="jScrollPane20" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="101" max="32767" attributes="0"/>
+                      <EmptySpace pref="66" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1820,6 +1782,27 @@
                 <Property name="text" type="java.lang.String" value="Name of Data Set"/>
               </Properties>
             </Component>
+            <Component class="javax.swing.JLabel" name="jLabel37">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Data Sets in HDFS"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane22">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTextArea" name="jTextArea1">
+                  <Properties>
+                    <Property name="columns" type="int" value="20"/>
+                    <Property name="rows" type="int" value="5"/>
+                    <Property name="text" type="java.lang.String" value="winequality-red2.csv&#xa;mush.txt&#xa;titanic_train.csv"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
       </SubComponents>

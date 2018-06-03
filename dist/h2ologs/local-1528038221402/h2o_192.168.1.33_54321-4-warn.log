@@ -1,0 +1,2 @@
+06-03 18:04:04.767 192.168.1.33:54321    8510   #2581-108 WARN: _train: Dropping bad and constant columns: [Name]
+06-03 18:04:05.473 192.168.1.33:54321    8510   #2581-106 WARN: _train: Dropping bad and constant columns: [Name]

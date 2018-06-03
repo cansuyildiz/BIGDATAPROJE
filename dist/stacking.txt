@@ -1,0 +1,4 @@
+mean = 11.179031491279602
+standart deviation = 4.288492243614287
+MSE = 0.31184500178929847
+confusion Matrix= 

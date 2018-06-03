@@ -11,12 +11,18 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaRDD;
+import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.mllib.fpm.AssociationRules;
 
 /**
  *
@@ -24,12 +30,22 @@ import javax.swing.SwingUtilities;
  */
 public class Frame1 extends javax.swing.JFrame {
 
+    public static final String user_name="hadoop";
+    public static final String hadoop_path="/usr/local/hadoop/hadoop-2.7.0/bin/hadoop";
+    public static final int sample_output_size=100;
+    public static final String algorithm_path = "//home//cansu//Desktop//CALISMALAR//bigDataStudy//ProjeSonAdim//1-Code//SparklingWater//";
+    
+    private static final long serialVersionUID = 1L;
+    
+    //private static String master = "";//spark://192.168.80.54:7077";
+    
     /**
      * Creates new form Frame1
      */
     public Frame1() {
         initComponents();
     }
+
 
     public String showFileContent(String filename, JTextArea terminal) throws FileNotFoundException, IOException{
         
@@ -53,7 +69,7 @@ public class Frame1 extends javax.swing.JFrame {
     }
     
     public void runAlgorithm(String filePath, String inputs, JTextArea terminal) throws IOException, InterruptedException {
-            
+
         class PrintThread implements Runnable{
             private String s;
             public PrintThread(String s){this.s = s;};
@@ -99,10 +115,6 @@ public class Frame1 extends javax.swing.JFrame {
         }
     }
     
-    
-    public static final String user_name="hadoop";
-    public static final String hadoop_path="/usr/local/hadoop/hadoop-2.7.0/bin/hadoop";
-    public static final int sample_output_size=100;
     
     /**
      * RUNS JAR FILE ON HADOOP
@@ -233,9 +245,8 @@ public class Frame1 extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jComboBox3 = new javax.swing.JComboBox<String>();
+        numOfResult = new javax.swing.JTextField();
+        infoGainThreshold = new javax.swing.JTextField();
         infoGainButton = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -248,7 +259,6 @@ public class Frame1 extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jPanel14 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<String>();
         PCAButton = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -286,14 +296,12 @@ public class Frame1 extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
-        jComboBox7 = new javax.swing.JComboBox<String>();
+        aprioriMinSupport = new javax.swing.JTextField();
+        aprioriMinConfidence = new javax.swing.JTextField();
         aprioriButton = new javax.swing.JButton();
         jLabel26 = new javax.swing.JLabel();
-        jTextField19 = new javax.swing.JTextField();
-        jTextField20 = new javax.swing.JTextField();
-        jComboBox10 = new javax.swing.JComboBox<String>();
+        fpgrowthMinSupport = new javax.swing.JTextField();
+        fpgrowthMinConfidence = new javax.swing.JTextField();
         fpGrowthButton = new javax.swing.JButton();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
@@ -301,38 +309,40 @@ public class Frame1 extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
-        jTextArea9 = new javax.swing.JTextArea();
+        aprioriResultTerminal = new javax.swing.JTextArea();
         jLabel32 = new javax.swing.JLabel();
         jScrollPane11 = new javax.swing.JScrollPane();
-        jTextArea11 = new javax.swing.JTextArea();
+        aprioriDurationTerminal = new javax.swing.JTextArea();
         jLabel33 = new javax.swing.JLabel();
         jScrollPane12 = new javax.swing.JScrollPane();
-        jTextArea12 = new javax.swing.JTextArea();
+        fpGrowthResultTerminal = new javax.swing.JTextArea();
         jLabel34 = new javax.swing.JLabel();
         jScrollPane13 = new javax.swing.JScrollPane();
-        jTextArea13 = new javax.swing.JTextArea();
+        fpGrowthDurationTerminal = new javax.swing.JTextArea();
         jPanel8 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField15 = new javax.swing.JTextField();
-        jTextField16 = new javax.swing.JTextField();
+        numOfFold = new javax.swing.JTextField();
+        seed = new javax.swing.JTextField();
         stackingButton = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         jScrollPane10 = new javax.swing.JScrollPane();
-        jTextArea10 = new javax.swing.JTextArea();
+        stackingDurationTerminal = new javax.swing.JTextArea();
         jLabel23 = new javax.swing.JLabel();
         jScrollPane21 = new javax.swing.JScrollPane();
-        jTextArea21 = new javax.swing.JTextArea();
+        stackingResultTerminal = new javax.swing.JTextArea();
         jLabel56 = new javax.swing.JLabel();
-        jTextField17 = new javax.swing.JTextField();
+        numOfTrees = new javax.swing.JTextField();
         jLabel57 = new javax.swing.JLabel();
-        jTextField18 = new javax.swing.JTextField();
+        maxDepth = new javax.swing.JTextField();
         jLabel58 = new javax.swing.JLabel();
-        jTextField25 = new javax.swing.JTextField();
+        minRows = new javax.swing.JTextField();
         jLabel59 = new javax.swing.JLabel();
-        jTextField26 = new javax.swing.JTextField();
+        learnRate = new javax.swing.JTextField();
         jLabel60 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        stackingResponse = new javax.swing.JTextField();
         jPanel9 = new javax.swing.JPanel();
         showDatasetButton = new javax.swing.JButton();
         jScrollPane20 = new javax.swing.JScrollPane();
@@ -340,6 +350,9 @@ public class Frame1 extends javax.swing.JFrame {
         jLabel55 = new javax.swing.JLabel();
         datasetName = new javax.swing.JTextField();
         jLabel39 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jScrollPane22 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -604,21 +617,14 @@ public class Frame1 extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("INFORMATION GAIN");
 
-        jTextField5.setText("Default: -1");
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        numOfResult.setText("-1");
+        numOfResult.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                numOfResultActionPerformed(evt);
             }
         });
 
-        jTextField6.setText("Default: -1");
-
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1 Node", "2 Node", "4 Node", "8 Node" }));
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
-            }
-        });
+        infoGainThreshold.setText("-1");
 
         infoGainButton.setText("GET RESULT");
         infoGainButton.addActionListener(new java.awt.event.ActionListener() {
@@ -652,10 +658,9 @@ public class Frame1 extends javax.swing.JFrame {
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField5)
+                    .addComponent(numOfResult)
                     .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField6)
-                    .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(infoGainThreshold)
                     .addComponent(infoGainButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(33, 33, 33)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -674,21 +679,19 @@ public class Frame1 extends javax.swing.JFrame {
                     .addGroup(jPanel13Layout.createSequentialGroup()
                         .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)))
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel13Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(numOfResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(infoGainThreshold, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
                         .addComponent(infoGainButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane3))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -711,13 +714,6 @@ public class Frame1 extends javax.swing.JFrame {
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Principal Component Analysis (PCA)");
-
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1 Node", "2 Node", "4 Node", "8 Node" }));
-        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox4ActionPerformed(evt);
-            }
-        });
 
         PCAButton.setText("GET RESULT");
         PCAButton.addActionListener(new java.awt.event.ActionListener() {
@@ -757,7 +753,6 @@ public class Frame1 extends javax.swing.JFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
                     .addComponent(jLabel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pcaNumberofK)
-                    .addComponent(jComboBox4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PCAButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -787,8 +782,6 @@ public class Frame1 extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(pcaNumberofK, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
                         .addComponent(PCAButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -995,76 +988,74 @@ public class Frame1 extends javax.swing.JFrame {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("APRIORI");
 
-        jTextField13.setText("Default: %35");
-        jTextField13.addActionListener(new java.awt.event.ActionListener() {
+        aprioriMinSupport.setText("50");
+        aprioriMinSupport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField13ActionPerformed(evt);
+                aprioriMinSupportActionPerformed(evt);
             }
         });
 
-        jTextField14.setText("Default: %70");
-
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1 Node", "2 Node", "4 Node", "8 Node" }));
-        jComboBox7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox7ActionPerformed(evt);
-            }
-        });
+        aprioriMinConfidence.setText("50");
 
         aprioriButton.setText("GET RESULT");
+        aprioriButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aprioriButtonActionPerformed(evt);
+            }
+        });
 
         jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel26.setText("FP-Growth");
 
-        jTextField19.setText("Default: %35");
-        jTextField19.addActionListener(new java.awt.event.ActionListener() {
+        fpgrowthMinSupport.setText("50");
+        fpgrowthMinSupport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField19ActionPerformed(evt);
+                fpgrowthMinSupportActionPerformed(evt);
             }
         });
 
-        jTextField20.setText("Default: %70");
-
-        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1 Node", "2 Node", "4 Node", "8 Node" }));
-        jComboBox10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox10ActionPerformed(evt);
-            }
-        });
+        fpgrowthMinConfidence.setText("50");
 
         fpGrowthButton.setText("GET RESULT");
+        fpGrowthButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fpGrowthButtonActionPerformed(evt);
+            }
+        });
 
-        jLabel27.setText("Minimum Support");
+        jLabel27.setText("Minimum Support (%)");
+        jLabel27.setToolTipText("");
 
         jLabel28.setText("Minimum Confidence");
 
-        jLabel29.setText("Minimum Support");
+        jLabel29.setText("Minimum Support (%)");
+        jLabel29.setToolTipText("");
 
         jLabel30.setText("Minimum Confidence");
 
         jLabel31.setText("Result");
 
-        jTextArea9.setColumns(20);
-        jTextArea9.setRows(5);
-        jScrollPane9.setViewportView(jTextArea9);
+        aprioriResultTerminal.setColumns(20);
+        aprioriResultTerminal.setRows(5);
+        jScrollPane9.setViewportView(aprioriResultTerminal);
 
         jLabel32.setText("Duration");
 
-        jTextArea11.setColumns(20);
-        jTextArea11.setRows(5);
-        jScrollPane11.setViewportView(jTextArea11);
+        aprioriDurationTerminal.setColumns(20);
+        aprioriDurationTerminal.setRows(5);
+        jScrollPane11.setViewportView(aprioriDurationTerminal);
 
         jLabel33.setText("Result");
 
-        jTextArea12.setColumns(20);
-        jTextArea12.setRows(5);
-        jScrollPane12.setViewportView(jTextArea12);
+        fpGrowthResultTerminal.setColumns(20);
+        fpGrowthResultTerminal.setRows(5);
+        jScrollPane12.setViewportView(fpGrowthResultTerminal);
 
         jLabel34.setText("Duration");
 
-        jTextArea13.setColumns(20);
-        jTextArea13.setRows(5);
-        jScrollPane13.setViewportView(jTextArea13);
+        fpGrowthDurationTerminal.setColumns(20);
+        fpGrowthDurationTerminal.setRows(5);
+        jScrollPane13.setViewportView(fpGrowthDurationTerminal);
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
@@ -1073,13 +1064,12 @@ public class Frame1 extends javax.swing.JFrame {
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jComboBox7, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(aprioriMinConfidence, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel28, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
                     .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(aprioriButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(aprioriMinSupport, javax.swing.GroupLayout.Alignment.LEADING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel17Layout.createSequentialGroup()
@@ -1089,11 +1079,10 @@ public class Frame1 extends javax.swing.JFrame {
                         .addGap(18, 18, Short.MAX_VALUE)
                         .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(fpGrowthButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox10, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
-                            .addComponent(jTextField20)
+                            .addComponent(fpgrowthMinConfidence)
                             .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField19)
+                            .addComponent(fpgrowthMinSupport)
                             .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel17Layout.createSequentialGroup()
@@ -1120,9 +1109,7 @@ public class Frame1 extends javax.swing.JFrame {
                                         .addGap(134, 134, 134)
                                         .addComponent(jLabel30)
                                         .addGap(13, 13, 13)
-                                        .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(26, 26, 26)
-                                        .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(fpgrowthMinConfidence, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel17Layout.createSequentialGroup()
                                         .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                             .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1130,8 +1117,8 @@ public class Frame1 extends javax.swing.JFrame {
                                         .addGap(8, 8, 8)
                                         .addComponent(jLabel29)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(20, 20, 20)
+                                        .addComponent(fpgrowthMinSupport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
                                 .addComponent(fpGrowthButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel17Layout.createSequentialGroup()
@@ -1147,15 +1134,14 @@ public class Frame1 extends javax.swing.JFrame {
                                 .addGap(64, 64, 64)
                                 .addComponent(jLabel27)
                                 .addGap(8, 8, 8)
-                                .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(aprioriMinSupport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel28)
                                 .addGap(13, 13, 13)
-                                .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(26, 26, 26)
-                                .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(20, 20, 20)
-                                .addComponent(aprioriButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(aprioriMinConfidence, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(aprioriButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel17Layout.createSequentialGroup()
                                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel31, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
@@ -1188,48 +1174,61 @@ public class Frame1 extends javax.swing.JFrame {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("STACKED ENSEMBLE");
 
-        jTextField15.setText("Default: 5");
-        jTextField15.addActionListener(new java.awt.event.ActionListener() {
+        numOfFold.setText("5");
+        numOfFold.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField15ActionPerformed(evt);
+                numOfFoldActionPerformed(evt);
             }
         });
 
-        jTextField16.setText("Default: 1");
+        seed.setText("1");
 
         stackingButton.setText("GET RESULT");
+        stackingButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stackingButtonActionPerformed(evt);
+            }
+        });
 
         jLabel22.setText("Result");
 
-        jTextArea10.setColumns(20);
-        jTextArea10.setRows(5);
-        jScrollPane10.setViewportView(jTextArea10);
+        stackingDurationTerminal.setColumns(20);
+        stackingDurationTerminal.setRows(5);
+        jScrollPane10.setViewportView(stackingDurationTerminal);
 
         jLabel23.setText("Duration");
 
-        jTextArea21.setColumns(20);
-        jTextArea21.setRows(5);
-        jScrollPane21.setViewportView(jTextArea21);
+        stackingResultTerminal.setColumns(20);
+        stackingResultTerminal.setRows(5);
+        jScrollPane21.setViewportView(stackingResultTerminal);
 
         jLabel56.setText("Number of trees");
 
-        jTextField17.setText("Default: 50");
+        numOfTrees.setText("50");
 
         jLabel57.setText("Maximum depth");
 
-        jTextField18.setText("Default: 3");
+        maxDepth.setText("3");
 
         jLabel58.setText("Minimum rows");
 
-        jTextField25.setText("Default: 2");
+        minRows.setText("2");
 
         jLabel59.setText("Learn rate");
 
-        jTextField26.setText("Default: 0.2");
+        learnRate.setText("0.2");
 
         jLabel60.setText("Number of folds");
 
         jLabel61.setText("Seed");
+
+        jLabel16.setText("response");
+
+        stackingResponse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stackingResponseActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -1238,20 +1237,22 @@ public class Frame1 extends javax.swing.JFrame {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel56, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(stackingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(numOfTrees, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel57, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(maxDepth, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel58, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(minRows, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel59, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(learnRate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel60, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(numOfFold, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel61, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(seed, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(stackingButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(stackingResponse, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1265,46 +1266,49 @@ public class Frame1 extends javax.swing.JFrame {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane21))
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel56)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(numOfTrees, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel57)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(maxDepth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel58)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(minRows, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addComponent(learnRate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel60)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(numOfFold, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
                         .addComponent(jLabel61)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(stackingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(49, 49, 49))
+                        .addGap(13, 13, 13))
+                    .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel23)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(seed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(stackingResponse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(stackingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -1345,21 +1349,38 @@ public class Frame1 extends javax.swing.JFrame {
 
         jLabel39.setText("Name of Data Set");
 
+        jLabel37.setText("Data Sets in HDFS");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("winequality-red2.csv\nmush.txt\ntitanic_train.csv");
+        jScrollPane22.setViewportView(jTextArea1);
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(72, 72, 72)
+                .addGap(35, 35, 35)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(showDatasetButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(datasetName)
-                    .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(showDatasetButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(datasetName, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel9Layout.createSequentialGroup()
+                                .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18)))
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel55, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane20, javax.swing.GroupLayout.DEFAULT_SIZE, 687, Short.MAX_VALUE))
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1367,15 +1388,19 @@ public class Frame1 extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(datasetName, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(showDatasetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(101, Short.MAX_VALUE))
+                        .addComponent(showDatasetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane20))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Show Dataset", jPanel9);
@@ -1398,17 +1423,13 @@ public class Frame1 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField15ActionPerformed
+    private void numOfFoldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numOfFoldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField15ActionPerformed
+    }//GEN-LAST:event_numOfFoldActionPerformed
 
-    private void jComboBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox7ActionPerformed
+    private void aprioriMinSupportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aprioriMinSupportActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox7ActionPerformed
-
-    private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField13ActionPerformed
+    }//GEN-LAST:event_aprioriMinSupportActionPerformed
 
     private void jComboBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox6ActionPerformed
         // TODO add your handling code here:
@@ -1422,17 +1443,9 @@ public class Frame1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_logRegResponseColumnActionPerformed
 
-    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
+    private void numOfResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numOfResultActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox4ActionPerformed
-
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox3ActionPerformed
-
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_numOfResultActionPerformed
 
     private void mahalanobisButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mahalanobisButtonActionPerformed
         Thread t = new Thread(){
@@ -1442,7 +1455,7 @@ public class Frame1 extends javax.swing.JFrame {
                 mahalanobisResultTerminal.setText("Mahalanobis Algorithm started, please wait..");
                 String inputs = " --dataset " + datasetName.getText() + " --columnIndex1 " + columnIndex1.getText() + " --columnIndex2 " + columnIndex2.getText() + " --threshold " + threshold.getText();   
                 try {
-                    runAlgorithm("//home//cansu//Desktop//CALISMALAR//bigDataStudy//ProjeSonAdim//1-Code//SparklingWater//Mahalanobis2.py", inputs, mahalanobisResultTerminal);  //  
+                    runAlgorithm(algorithm_path + "Mahalanobis2.py", inputs, mahalanobisResultTerminal);  //  
                 } catch (IOException ex) {
                     Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (InterruptedException ex) {
@@ -1468,13 +1481,9 @@ public class Frame1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_columnIndex1ActionPerformed
 
-    private void jTextField19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField19ActionPerformed
+    private void fpgrowthMinSupportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fpgrowthMinSupportActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField19ActionPerformed
-
-    private void jComboBox10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox10ActionPerformed
+    }//GEN-LAST:event_fpgrowthMinSupportActionPerformed
 
     private void kMeansButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kMeansButtonActionPerformed
               
@@ -1485,7 +1494,7 @@ public class Frame1 extends javax.swing.JFrame {
                 kMeansResultTerminal.setText("KMeans Algorithm started, please wait..");
                 String inputs = " --dataset " + datasetName.getText() + " --k " + numberofK.getText();   
                 try {
-                    runAlgorithm("//home//cansu//Desktop//CALISMALAR//bigDataStudy//ProjeSonAdim//1-Code//SparklingWater//KMeans2.py", inputs, kMeansResultTerminal);  //  
+                    runAlgorithm(algorithm_path + "KMeans2.py", inputs, kMeansResultTerminal);  //  
                 } catch (IOException ex) {
                     Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (InterruptedException ex) {
@@ -1515,7 +1524,7 @@ public class Frame1 extends javax.swing.JFrame {
                 logisticRegressionResultTerminal.setText("Logistic Regression Algorithm started, please wait..");
                 String inputs = " --dataset " + datasetName.getText() + " --response " + logRegResponseColumn.getText();    //!
                 try {
-                    runAlgorithm("//home//cansu//Desktop//CALISMALAR//bigDataStudy//ProjeSonAdim//1-Code//SparklingWater//logisticRegression2.py", inputs, logisticRegressionResultTerminal);  //  
+                    runAlgorithm(algorithm_path + "logisticRegression2.py", inputs, logisticRegressionResultTerminal);  //  
                 } catch (IOException ex) {
                     Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (InterruptedException ex) {
@@ -1533,7 +1542,30 @@ public class Frame1 extends javax.swing.JFrame {
     }//GEN-LAST:event_logisticRegressionButtonActionPerformed
 
     private void infoGainButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoGainButtonActionPerformed
-        // TODO add your handling code here:
+        
+        Thread t = new Thread(){
+            @Override
+            public void run(){
+                //KMeans km = new KMeans();
+                infoGainResultTerminal.setText("Information Gain Algorithm started, please wait..");
+                String inputs = " --dataset " + datasetName.getText() + " --numOfResult " + numOfResult.getText() + " --threshold " + infoGainThreshold.getText();   
+                try {
+                    runAlgorithm(algorithm_path + "informationGain2.py", inputs, infoGainResultTerminal);  //  
+                } catch (IOException ex) {
+                    Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                try {
+                    showFileContent("//home//cansu//NetBeansProjects//BIGDATAPROJE//dist//informationGain.txt", infoGainDurationTerminal);   //
+                } catch (IOException ex) {
+                    Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
+                }    
+            }
+        };
+        t.start();
+        
     }//GEN-LAST:event_infoGainButtonActionPerformed
 
     private void multipleImputationButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multipleImputationButtonActionPerformed
@@ -1545,7 +1577,7 @@ public class Frame1 extends javax.swing.JFrame {
                 multipleImputationResultTerminal.setText("Multiple Imputation Algorithm started, please wait..");
                 String inputs = " --dataset " + datasetName.getText() + " --response " + mulImputResponseColumn.getText();    //!
                 try {
-                    runAlgorithm("//home//cansu//Desktop//CALISMALAR//bigDataStudy//ProjeSonAdim//1-Code//SparklingWater//multipleImputation2.py", inputs, multipleImputationResultTerminal);  //  
+                    runAlgorithm(algorithm_path + "multipleImputation2.py", inputs, multipleImputationResultTerminal);  //  
                 } catch (IOException ex) {
                     Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (InterruptedException ex) {
@@ -1598,7 +1630,7 @@ public class Frame1 extends javax.swing.JFrame {
                 PCAResultTerminal.setText("PCA Algorithm started, please wait..");
                 String inputs = " --dataset " + datasetName.getText() + " --k " + pcaNumberofK.getText();   
                 try {
-                    runAlgorithm("//home//cansu//Desktop//CALISMALAR//bigDataStudy//ProjeSonAdim//1-Code//SparklingWater//PCA2.py", inputs, PCAResultTerminal);  //  
+                    runAlgorithm(algorithm_path + "PCA2.py", inputs, PCAResultTerminal);  //  
                 } catch (IOException ex) {
                     Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (InterruptedException ex) {
@@ -1628,7 +1660,7 @@ public class Frame1 extends javax.swing.JFrame {
                 linearRegressionResultTerminal.setText("Linear Regression Algorithm started, please wait..");
                 String inputs = " --dataset " + datasetName.getText() + " --response " + linRegResponseColumn.getText();    //!
                 try {
-                    runAlgorithm("//home//cansu//Desktop//CALISMALAR//bigDataStudy//ProjeSonAdim//1-Code//SparklingWater//linearRegression2.py", inputs, linearRegressionResultTerminal);  //  
+                    runAlgorithm(algorithm_path + "linearRegression2.py", inputs, linearRegressionResultTerminal);  //  
                 } catch (IOException ex) {
                     Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (InterruptedException ex) {
@@ -1644,6 +1676,100 @@ public class Frame1 extends javax.swing.JFrame {
         };
         t.start();
     }//GEN-LAST:event_linearRegressionButtonActionPerformed
+
+    private void stackingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stackingButtonActionPerformed
+        Thread t = new Thread(){
+            
+            @Override
+            public void run(){
+                //KMeans km = new KMeans();
+                stackingResultTerminal.setText("Stacking Algorithm started, please wait..");
+                String inputs = " --dataset " + datasetName.getText() + " --ntrees " + numOfTrees.getText() + " --maxDepth " + maxDepth.getText() + " --minRows " + minRows.getText() + " --learnRate " + learnRate.getText() + " --nFolds " + numOfFold.getText() + " --seed " + seed.getText() + " --response " + stackingResponse.getText();    //!
+                try {
+                    runAlgorithm(algorithm_path + "stacking2.py", inputs, stackingResultTerminal);  //  
+                } catch (IOException ex) {
+                    Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                try {
+                    showFileContent("//home//cansu//NetBeansProjects//BIGDATAPROJE//dist//stacking.txt", stackingDurationTerminal);   //
+                } catch (IOException ex) {
+                    Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
+                }    
+            }
+        };
+        t.start();
+    }//GEN-LAST:event_stackingButtonActionPerformed
+
+    private void stackingResponseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stackingResponseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_stackingResponseActionPerformed
+
+    private void fpGrowthButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fpGrowthButtonActionPerformed
+        Thread t = new Thread(){
+            
+            @Override
+            public void run(){
+                //KMeans km = new KMeans();
+                fpGrowthResultTerminal.setText("Fp-Growth Algorithm started, please wait..");
+                float minSupportValue = (Float.parseFloat(fpgrowthMinSupport.getText())/100);
+                float minConfidenceValue = (Float.parseFloat(fpgrowthMinConfidence.getText())/100);
+                //fpGrowthResultTerminal.setText(Float.toString(minSupportValue));
+                String inputs = " --dataset " + datasetName.getText() + " --minSupport " + Float.toString(minSupportValue) + " --minConfidence " + Float.toString(minConfidenceValue);    
+                try {
+                    runAlgorithm( algorithm_path + "fp-growth2.py", inputs, fpGrowthResultTerminal);  //  
+                } catch (IOException ex) {
+                    Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                try {
+                    showFileContent("//home//cansu//NetBeansProjects//BIGDATAPROJE//dist//fp-growth.txt", fpGrowthDurationTerminal);   //
+                } catch (IOException ex) {
+                    Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
+                }    
+            }
+        };
+        t.start();
+    }//GEN-LAST:event_fpGrowthButtonActionPerformed
+
+    private void aprioriButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aprioriButtonActionPerformed
+        
+	SparkConf conf = new SparkConf().setAppName("Apriori")
+			.setMaster("local")
+			//.setJars(new String[] {"C:\\Users\\SABAH TUNA\\Desktop\\proje.jar"})
+			.set("spark.ui.port", "7077")
+			.set("spark.executor.memory", "5G")
+			.set("spark.driver.memory", "5G");
+	JavaSparkContext sc = new JavaSparkContext(conf);
+        
+        JavaRDD<AssociationRules.Rule<String>> results = sc.emptyRDD();
+        
+        String path="hdfs://localhost:9000/user/cansu/mush.txt";
+        double minSupportValue = (Double.parseDouble(aprioriMinSupport.getText())/100);
+        double minConfidenceValue = (Double.parseDouble(aprioriMinConfidence.getText())/100);
+        
+        
+        Apriori ap = new Apriori();
+        
+        long start = System.currentTimeMillis();
+        results = ap.run(sc , minSupportValue, path, minConfidenceValue);
+        long end = System.currentTimeMillis();
+        
+        String rules = "";
+    	for (AssociationRules.Rule<String> rule : results.collect()) {
+    		rules = rules + rule.javaAntecedent() + " => " + rule.javaConsequent() + ", " + rule.confidence() + "\n"; 
+    		//rules.add(rule.javaAntecedent() + " => " + rule.javaConsequent() + ", " + rule.confidence());
+		}
+    	aprioriResultTerminal.setText(rules);
+        
+        NumberFormat formatter = new DecimalFormat("#0.00000");
+    	aprioriDurationTerminal.setText("Execution time is " + formatter.format((end - start) / 1000d) + " seconds");
+        
+    }//GEN-LAST:event_aprioriButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1688,19 +1814,24 @@ public class Frame1 extends javax.swing.JFrame {
     private javax.swing.JTextArea PCADurationTerminal;
     private javax.swing.JTextArea PCAResultTerminal;
     private javax.swing.JButton aprioriButton;
+    private javax.swing.JTextArea aprioriDurationTerminal;
+    private javax.swing.JTextField aprioriMinConfidence;
+    private javax.swing.JTextField aprioriMinSupport;
+    private javax.swing.JTextArea aprioriResultTerminal;
     private javax.swing.JTextField columnIndex1;
     private javax.swing.JTextField columnIndex2;
     private javax.swing.JTextArea dataSetTerminal;
     private javax.swing.JTextField datasetName;
     private javax.swing.JButton fpGrowthButton;
+    private javax.swing.JTextArea fpGrowthDurationTerminal;
+    private javax.swing.JTextArea fpGrowthResultTerminal;
+    private javax.swing.JTextField fpgrowthMinConfidence;
+    private javax.swing.JTextField fpgrowthMinSupport;
     private javax.swing.JButton infoGainButton;
     private javax.swing.JTextArea infoGainDurationTerminal;
     private javax.swing.JTextArea infoGainResultTerminal;
-    private javax.swing.JComboBox<String> jComboBox10;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JTextField infoGainThreshold;
     private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1708,6 +1839,7 @@ public class Frame1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -1730,6 +1862,7 @@ public class Frame1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
@@ -1784,6 +1917,7 @@ public class Frame1 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane20;
     private javax.swing.JScrollPane jScrollPane21;
+    private javax.swing.JScrollPane jScrollPane22;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -1792,27 +1926,11 @@ public class Frame1 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea jTextArea10;
-    private javax.swing.JTextArea jTextArea11;
-    private javax.swing.JTextArea jTextArea12;
-    private javax.swing.JTextArea jTextArea13;
-    private javax.swing.JTextArea jTextArea21;
-    private javax.swing.JTextArea jTextArea9;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField26;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton kMeansButton;
     private javax.swing.JTextArea kMeansDurationTerminal;
     private javax.swing.JTextArea kMeansResultTerminal;
+    private javax.swing.JTextField learnRate;
     private javax.swing.JTextField linRegResponseColumn;
     private javax.swing.JButton linearRegressionButton;
     private javax.swing.JTextArea linearRegressionDurationTerminal;
@@ -1824,14 +1942,23 @@ public class Frame1 extends javax.swing.JFrame {
     private javax.swing.JButton mahalanobisButton;
     private javax.swing.JTextArea mahalanobisDurationTerminal;
     private javax.swing.JTextArea mahalanobisResultTerminal;
+    private javax.swing.JTextField maxDepth;
+    private javax.swing.JTextField minRows;
     private javax.swing.JTextField mulImputResponseColumn;
     private javax.swing.JButton multipleImputationButton;
     private javax.swing.JTextArea multipleImputationDurationTerminal;
     private javax.swing.JTextArea multipleImputationResultTerminal;
+    private javax.swing.JTextField numOfFold;
+    private javax.swing.JTextField numOfResult;
+    private javax.swing.JTextField numOfTrees;
     private javax.swing.JTextField numberofK;
     private javax.swing.JTextField pcaNumberofK;
+    private javax.swing.JTextField seed;
     private javax.swing.JButton showDatasetButton;
     private javax.swing.JButton stackingButton;
+    private javax.swing.JTextArea stackingDurationTerminal;
+    private javax.swing.JTextField stackingResponse;
+    private javax.swing.JTextArea stackingResultTerminal;
     private javax.swing.JLabel textfielddsdsds;
     private javax.swing.JTextField threshold;
     // End of variables declaration//GEN-END:variables
