@@ -30,11 +30,13 @@ import org.apache.spark.mllib.fpm.AssociationRules;
  */
 public class Frame1 extends javax.swing.JFrame {
 
-    public static final String user_name="hadoop";
+    //kullanici tarafindan degistirilmeli
+    public static final String algorithm_path = "pythonCodes//"; // "/home/cansu/NetBeansProjects/BIGDATAPROJE//pythonCodes//";
+    public static final String jar_path = ""; // "//home//cansu//NetBeansProjects//BIGDATAPROJE//dist//";
     public static final String hadoop_path="/usr/local/hadoop/hadoop-2.7.0/bin/hadoop";
-    public static final int sample_output_size=100;
-    public static final String algorithm_path = "//home//cansu//Desktop//CALISMALAR//bigDataStudy//ProjeSonAdim//1-Code//SparklingWater//";
     
+    
+    public static final int sample_output_size=100;
     private static final long serialVersionUID = 1L;
     
     //private static String master = "";//spark://192.168.80.54:7077";
@@ -284,7 +286,6 @@ public class Frame1 extends javax.swing.JFrame {
         jPanel16 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         numberofK = new javax.swing.JTextField();
-        jComboBox6 = new javax.swing.JComboBox<String>();
         kMeansButton = new javax.swing.JButton();
         jLabel35 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
@@ -545,8 +546,8 @@ public class Frame1 extends javax.swing.JFrame {
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(mulImputResponseColumn, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel48, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                    .addComponent(textfielddsdsds, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(multipleImputationButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(multipleImputationButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(textfielddsdsds, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane16, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
@@ -897,13 +898,6 @@ public class Frame1 extends javax.swing.JFrame {
             }
         });
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1 Node", "2 Node", "4 Node", "8 Node" }));
-        jComboBox6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox6ActionPerformed(evt);
-            }
-        });
-
         kMeansButton.setText("GET RESULT");
         kMeansButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -935,8 +929,7 @@ public class Frame1 extends javax.swing.JFrame {
                     .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(numberofK, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(kMeansButton, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(kMeansButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane18, javax.swing.GroupLayout.DEFAULT_SIZE, 741, Short.MAX_VALUE)
@@ -964,11 +957,9 @@ public class Frame1 extends javax.swing.JFrame {
                         .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(numberofK, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(kMeansButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 194, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -1353,7 +1344,7 @@ public class Frame1 extends javax.swing.JFrame {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("winequality-red2.csv\nmush.txt\ntitanic_train.csv");
+        jTextArea1.setText("winequality-red2.csv\nmush.txt\ntitanic_train.csv\nballons");
         jScrollPane22.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
@@ -1431,10 +1422,6 @@ public class Frame1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_aprioriMinSupportActionPerformed
 
-    private void jComboBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox6ActionPerformed
-
     private void numberofKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberofKActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_numberofKActionPerformed
@@ -1455,7 +1442,7 @@ public class Frame1 extends javax.swing.JFrame {
                 mahalanobisResultTerminal.setText("Mahalanobis Algorithm started, please wait..");
                 String inputs = " --dataset " + datasetName.getText() + " --columnIndex1 " + columnIndex1.getText() + " --columnIndex2 " + columnIndex2.getText() + " --threshold " + threshold.getText();   
                 try {
-                    runAlgorithm(algorithm_path + "Mahalanobis2.py", inputs, mahalanobisResultTerminal);  //  
+                    runAlgorithm(algorithm_path + "Mahalanobis.py", inputs, mahalanobisResultTerminal);  //  
                 } catch (IOException ex) {
                     Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (InterruptedException ex) {
@@ -1463,7 +1450,7 @@ public class Frame1 extends javax.swing.JFrame {
                 }
 
                 try {
-                    showFileContent("//home//cansu//NetBeansProjects//BIGDATAPROJE//dist//mahalanobis.txt", mahalanobisDurationTerminal);   //
+                    showFileContent(jar_path + "mahalanobis.txt", mahalanobisDurationTerminal);   //
                 } catch (IOException ex) {
                     Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
                 }    
@@ -1494,7 +1481,7 @@ public class Frame1 extends javax.swing.JFrame {
                 kMeansResultTerminal.setText("KMeans Algorithm started, please wait..");
                 String inputs = " --dataset " + datasetName.getText() + " --k " + numberofK.getText();   
                 try {
-                    runAlgorithm(algorithm_path + "KMeans2.py", inputs, kMeansResultTerminal);  //  
+                    runAlgorithm(algorithm_path + "KMeans.py", inputs, kMeansResultTerminal);  //  
                 } catch (IOException ex) {
                     Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (InterruptedException ex) {
@@ -1502,7 +1489,7 @@ public class Frame1 extends javax.swing.JFrame {
                 }
 
                 try {
-                    showFileContent("//home//cansu//NetBeansProjects//BIGDATAPROJE//dist//kmeans.txt", kMeansDurationTerminal);   //
+                    showFileContent(jar_path + "kmeans.txt", kMeansDurationTerminal);   //
                 } catch (IOException ex) {
                     Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
                 }    
@@ -1524,7 +1511,7 @@ public class Frame1 extends javax.swing.JFrame {
                 logisticRegressionResultTerminal.setText("Logistic Regression Algorithm started, please wait..");
                 String inputs = " --dataset " + datasetName.getText() + " --response " + logRegResponseColumn.getText();    //!
                 try {
-                    runAlgorithm(algorithm_path + "logisticRegression2.py", inputs, logisticRegressionResultTerminal);  //  
+                    runAlgorithm(algorithm_path + "logisticRegression.py", inputs, logisticRegressionResultTerminal);  //  
                 } catch (IOException ex) {
                     Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (InterruptedException ex) {
@@ -1532,7 +1519,7 @@ public class Frame1 extends javax.swing.JFrame {
                 }
 
                 try {
-                    showFileContent("//home//cansu//NetBeansProjects//BIGDATAPROJE//dist//logisticRegression.txt", logisticRegressionDurationTerminal);   //
+                    showFileContent(jar_path + "logisticRegression.txt", logisticRegressionDurationTerminal);   //
                 } catch (IOException ex) {
                     Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
                 }    
@@ -1550,7 +1537,7 @@ public class Frame1 extends javax.swing.JFrame {
                 infoGainResultTerminal.setText("Information Gain Algorithm started, please wait..");
                 String inputs = " --dataset " + datasetName.getText() + " --numOfResult " + numOfResult.getText() + " --threshold " + infoGainThreshold.getText();   
                 try {
-                    runAlgorithm(algorithm_path + "informationGain2.py", inputs, infoGainResultTerminal);  //  
+                    runAlgorithm(algorithm_path + "informationGain.py", inputs, infoGainResultTerminal);  //  
                 } catch (IOException ex) {
                     Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (InterruptedException ex) {
@@ -1558,7 +1545,7 @@ public class Frame1 extends javax.swing.JFrame {
                 }
 
                 try {
-                    showFileContent("//home//cansu//NetBeansProjects//BIGDATAPROJE//dist//informationGain.txt", infoGainDurationTerminal);   //
+                    showFileContent(jar_path + "informationGain.txt", infoGainDurationTerminal);   //
                 } catch (IOException ex) {
                     Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
                 }    
@@ -1577,7 +1564,7 @@ public class Frame1 extends javax.swing.JFrame {
                 multipleImputationResultTerminal.setText("Multiple Imputation Algorithm started, please wait..");
                 String inputs = " --dataset " + datasetName.getText() + " --response " + mulImputResponseColumn.getText();    //!
                 try {
-                    runAlgorithm(algorithm_path + "multipleImputation2.py", inputs, multipleImputationResultTerminal);  //  
+                    runAlgorithm(algorithm_path + "multipleImputation.py", inputs, multipleImputationResultTerminal);  //  
                 } catch (IOException ex) {
                     Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (InterruptedException ex) {
@@ -1585,7 +1572,7 @@ public class Frame1 extends javax.swing.JFrame {
                 }
 
                 try {
-                    showFileContent("//home//cansu//NetBeansProjects//BIGDATAPROJE//dist//multipleImputation.txt", multipleImputationDurationTerminal);   //
+                    showFileContent(jar_path + "multipleImputation.txt", multipleImputationDurationTerminal);   //
                 } catch (IOException ex) {
                     Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
                 }    
@@ -1630,7 +1617,7 @@ public class Frame1 extends javax.swing.JFrame {
                 PCAResultTerminal.setText("PCA Algorithm started, please wait..");
                 String inputs = " --dataset " + datasetName.getText() + " --k " + pcaNumberofK.getText();   
                 try {
-                    runAlgorithm(algorithm_path + "PCA2.py", inputs, PCAResultTerminal);  //  
+                    runAlgorithm(algorithm_path + "PCA.py", inputs, PCAResultTerminal);  //  
                 } catch (IOException ex) {
                     Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (InterruptedException ex) {
@@ -1638,7 +1625,7 @@ public class Frame1 extends javax.swing.JFrame {
                 }
 
                 try {
-                    showFileContent("//home//cansu//NetBeansProjects//BIGDATAPROJE//dist//pca.txt", PCADurationTerminal);   //
+                    showFileContent(jar_path + "pca.txt", PCADurationTerminal);   //
                 } catch (IOException ex) {
                     Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
                 }    
@@ -1660,7 +1647,7 @@ public class Frame1 extends javax.swing.JFrame {
                 linearRegressionResultTerminal.setText("Linear Regression Algorithm started, please wait..");
                 String inputs = " --dataset " + datasetName.getText() + " --response " + linRegResponseColumn.getText();    //!
                 try {
-                    runAlgorithm(algorithm_path + "linearRegression2.py", inputs, linearRegressionResultTerminal);  //  
+                    runAlgorithm(algorithm_path + "linearRegression.py", inputs, linearRegressionResultTerminal);  //  
                 } catch (IOException ex) {
                     Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (InterruptedException ex) {
@@ -1668,7 +1655,7 @@ public class Frame1 extends javax.swing.JFrame {
                 }
 
                 try {
-                    showFileContent("//home//cansu//NetBeansProjects//BIGDATAPROJE//dist//linearRegression.txt", linearRegressionDurationTerminal);   //
+                    showFileContent(jar_path + "linearRegression.txt", linearRegressionDurationTerminal);   //
                 } catch (IOException ex) {
                     Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
                 }    
@@ -1686,7 +1673,7 @@ public class Frame1 extends javax.swing.JFrame {
                 stackingResultTerminal.setText("Stacking Algorithm started, please wait..");
                 String inputs = " --dataset " + datasetName.getText() + " --ntrees " + numOfTrees.getText() + " --maxDepth " + maxDepth.getText() + " --minRows " + minRows.getText() + " --learnRate " + learnRate.getText() + " --nFolds " + numOfFold.getText() + " --seed " + seed.getText() + " --response " + stackingResponse.getText();    //!
                 try {
-                    runAlgorithm(algorithm_path + "stacking2.py", inputs, stackingResultTerminal);  //  
+                    runAlgorithm(algorithm_path + "stacking.py", inputs, stackingResultTerminal);  //  
                 } catch (IOException ex) {
                     Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (InterruptedException ex) {
@@ -1694,7 +1681,7 @@ public class Frame1 extends javax.swing.JFrame {
                 }
 
                 try {
-                    showFileContent("//home//cansu//NetBeansProjects//BIGDATAPROJE//dist//stacking.txt", stackingDurationTerminal);   //
+                    showFileContent(jar_path + "stacking.txt", stackingDurationTerminal);   //
                 } catch (IOException ex) {
                     Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
                 }    
@@ -1719,7 +1706,7 @@ public class Frame1 extends javax.swing.JFrame {
                 //fpGrowthResultTerminal.setText(Float.toString(minSupportValue));
                 String inputs = " --dataset " + datasetName.getText() + " --minSupport " + Float.toString(minSupportValue) + " --minConfidence " + Float.toString(minConfidenceValue);    
                 try {
-                    runAlgorithm( algorithm_path + "fp-growth2.py", inputs, fpGrowthResultTerminal);  //  
+                    runAlgorithm( algorithm_path + "fp-growth.py", inputs, fpGrowthResultTerminal);  //  
                 } catch (IOException ex) {
                     Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (InterruptedException ex) {
@@ -1727,7 +1714,7 @@ public class Frame1 extends javax.swing.JFrame {
                 }
 
                 try {
-                    showFileContent("//home//cansu//NetBeansProjects//BIGDATAPROJE//dist//fp-growth.txt", fpGrowthDurationTerminal);   //
+                    showFileContent(jar_path + "fp-growth.txt", fpGrowthDurationTerminal);   //
                 } catch (IOException ex) {
                     Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
                 }    
@@ -1740,15 +1727,15 @@ public class Frame1 extends javax.swing.JFrame {
         
 	SparkConf conf = new SparkConf().setAppName("Apriori")
 			.setMaster("local")
-			//.setJars(new String[] {"C:\\Users\\SABAH TUNA\\Desktop\\proje.jar"})
+                        .setJars(new String[] {"/home/cansu/NetBeansProjects/BIGDATAPROJE/dist/BIGDATAPROJE.jar"})
 			.set("spark.ui.port", "7077")
-			.set("spark.executor.memory", "5G")
-			.set("spark.driver.memory", "5G");
+			.set("spark.executor.memory", "2G")
+			.set("spark.driver.memory", "2G");
 	JavaSparkContext sc = new JavaSparkContext(conf);
         
         JavaRDD<AssociationRules.Rule<String>> results = sc.emptyRDD();
         
-        String path="hdfs://localhost:9000/user/cansu/mush.txt";
+        String path="hdfs://localhost:9000/user/cansu/" + datasetName.getText();
         double minSupportValue = (Double.parseDouble(aprioriMinSupport.getText())/100);
         double minConfidenceValue = (Double.parseDouble(aprioriMinConfidence.getText())/100);
         
@@ -1756,7 +1743,7 @@ public class Frame1 extends javax.swing.JFrame {
         Apriori ap = new Apriori();
         
         long start = System.currentTimeMillis();
-        results = ap.run(sc , minSupportValue, path, minConfidenceValue);
+        results = ap.runn(sc , Integer.parseInt(aprioriMinSupport.getText()), path, Integer.parseInt(aprioriMinConfidence.getText()));
         long end = System.currentTimeMillis();
         
         String rules = "";
@@ -1831,7 +1818,6 @@ public class Frame1 extends javax.swing.JFrame {
     private javax.swing.JTextArea infoGainDurationTerminal;
     private javax.swing.JTextArea infoGainResultTerminal;
     private javax.swing.JTextField infoGainThreshold;
-    private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

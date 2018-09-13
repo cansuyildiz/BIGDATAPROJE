@@ -1,2 +1,0 @@
-06-03 17:58:00.496 192.168.1.33:54321    7860   #3851-109 WARN: _train: Dropping bad and constant columns: [Name]
-06-03 17:58:00.806 192.168.1.33:54321    7860   #3851-106 WARN: _train: Dropping bad and constant columns: [Name]

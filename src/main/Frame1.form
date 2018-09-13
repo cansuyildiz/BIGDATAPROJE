@@ -284,8 +284,8 @@
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Component id="mulImputResponseColumn" alignment="0" max="32767" attributes="0"/>
                               <Component id="jLabel48" alignment="0" pref="171" max="32767" attributes="0"/>
-                              <Component id="textfielddsdsds" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="multipleImputationButton" max="32767" attributes="0"/>
+                              <Component id="textfielddsdsds" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -973,8 +973,7 @@
                               <Component id="jLabel35" min="-2" pref="233" max="-2" attributes="0"/>
                               <Component id="jLabel6" min="-2" pref="233" max="-2" attributes="0"/>
                               <Component id="numberofK" alignment="0" min="-2" pref="233" max="-2" attributes="0"/>
-                              <Component id="jComboBox6" alignment="0" min="-2" pref="233" max="-2" attributes="0"/>
-                              <Component id="kMeansButton" min="-2" pref="233" max="-2" attributes="0"/>
+                              <Component id="kMeansButton" alignment="1" min="-2" pref="233" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -1007,11 +1006,9 @@
                                   <Component id="jLabel35" min="-2" pref="23" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="numberofK" min="-2" pref="30" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                  <Component id="jComboBox6" min="-2" pref="30" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="kMeansButton" min="-2" pref="37" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="194" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -1033,24 +1030,6 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="numberofKActionPerformed"/>
                   </Events>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox6">
-                  <Properties>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="1 Node"/>
-                        <StringItem index="1" value="2 Node"/>
-                        <StringItem index="2" value="4 Node"/>
-                        <StringItem index="3" value="8 Node"/>
-                      </StringArray>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox6ActionPerformed"/>
-                  </Events>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
                 </Component>
                 <Component class="javax.swing.JButton" name="kMeansButton">
                   <Properties>
@@ -1798,7 +1777,7 @@
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
-                    <Property name="text" type="java.lang.String" value="winequality-red2.csv&#xa;mush.txt&#xa;titanic_train.csv"/>
+                    <Property name="text" type="java.lang.String" value="winequality-red2.csv&#xa;mush.txt&#xa;titanic_train.csv&#xa;ballons"/>
                   </Properties>
                 </Component>
               </SubComponents>

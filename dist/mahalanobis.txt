@@ -1,0 +1,4 @@
+Mean duration of calculating distance = 0.22427348136901856
+Mean duration of removing outliers = 0.1303194761276245
+standart deviation of calculating distance =0.0686722827008482
+standart deviation of removing outliers =0.004666667654520231

@@ -5,11 +5,6 @@
  */
 package main;
 
-/**
- *
- * @author cansu
- */
-
 import java.util.*;
 import java.util.stream.Collectors;
 import org.apache.spark.api.java.JavaPairRDD;
@@ -31,7 +26,7 @@ public class Apriori {
     //private static String appName = "Apriori_Example";
 
     //public static final long serialVersionUID = 1L;
-    public JavaRDD<AssociationRules.Rule<String>> run(JavaSparkContext sc, double sup, String path, double conf) {
+    public JavaRDD<AssociationRules.Rule<String>> runn(JavaSparkContext sc, double sup, String path, double conf) {
 
             JavaRDD<String> rddX = sc.textFile(path);
             Double count = rddX.count() * sup;
@@ -83,4 +78,3 @@ public class Apriori {
     }
 	
 }
-
