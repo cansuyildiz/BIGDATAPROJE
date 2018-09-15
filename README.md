@@ -17,7 +17,7 @@ H2O'da Doğrusal Regresyon, Temel Bileşen Analizi (PCA), Lojistik Regresyon, K-
 
 FP-Growth Apache Spark'ta hazır olarak bulunmaktaydı. Spark MLlib kullanılarak uygulanmıştır.
 
-Mahalanobis mesafesi hesaplama, çoklu imputasyon, bilgi Kazancı yöntemi, Apriori yöntemleri Apache Spark ve H2O veri işleme fonksiyonları kullanılarak geliştirilmiştir.
+Mahalanobis Mesafesi hesaplama, Çoklu İmputasyon, Bilgi Kazancı yöntemi, Apriori yöntemleri Apache Spark ve H2O veri işleme fonksiyonları kullanılarak geliştirilmiştir.
 
 Projede kullanıcı kullanımı sunmak için arayüz eklenmiştir. Arayüz Java swing kullanılarak yapılmıştır. Ancak algoritmaların uygulanması ve geliştirilmesi için Python programlama dili tercih edilmiştir. Arayüzde ilgili algoritma çalıştırılmak istendiğinde arka planda Python scriptleri koşturulmaktadır.
 
