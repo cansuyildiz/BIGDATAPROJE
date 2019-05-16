@@ -9,7 +9,7 @@ on each node of a Spark cluster and access data stored in data structures of Spa
 
 ## Proposed Extension Data Mining Engine API
 
-![exmp](img/ss.png)
+![exmp](img/proposedDME.png)
 
 
 ## Dependencies
