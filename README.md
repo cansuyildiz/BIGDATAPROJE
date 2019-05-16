@@ -105,7 +105,7 @@ If you use this implementation in your work, please cite the following:
 E. Cansu Yıldız, M. S. Aktas, O. Kalıpsız, A. N. Kanlı and U. O. Turgut,
 "Data Mining Library for Big Data Processing Platforms: A Case 
 Study-Sparkling Water Platform," *2018 3rd International Conference on Computer Science and Engineering (UBMK)*, Sarajevo, 2018, pp. 167-172.
-doi: 10.1109/UBMK.2018.8566278     [view](URL: <http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8566278&isnumber=8566244>)
+doi: 10.1109/UBMK.2018.8566278     [view](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8566278&isnumber=8566244)
 
 ## References
 
