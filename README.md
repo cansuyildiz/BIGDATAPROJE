@@ -1,68 +1,110 @@
-# Sparkling Water Platformunda Veri Madenciliği Adımlarının Gerçeklenmesi
+# Data Mining Library for Sparkling Water Platform
 
-Bu projede veri madenciliği adımlarında kullanılan algoritmaların bir kısmı Sparkling Water Platformunda uygulanmış, bir kısmı da bu platform için geliştirilmiştir.
+[TOC]
 
-Veri Madenciliği Adımları ve Kullanılan Algoritmalar:
+## Sparkling Water Platform
 
-1. Aykırı Değer Ayıklama: Mahalanobis Uzaklığı
-2. Eksik Veri Tamamlama:  Doğrusal Regresyon, Çoklu İmputasyon
-3. Boyut İndirgeme: Temel Bileşen Analizi (PCA)
-4. Özellik Seçimi : Bilgi Kazancı Yöntemi
-5. Sınıflandırma: Logistik Regresyon
-6. Kümeleme: K-Means
-7. Birliktelik Kuralları: Apriori, FP-Growth
-8. Toplu Öğrenme: Stacking
+Sparkling Water is an integration of H2O into the Spark ecosystem. It facilitates the use of H2O algorithms in Spark workflows. It is designed as a regular Spark application and provides a way to start H2O services
+on each node of a Spark cluster and access data stored in data structures of Spark and H2O. [1]
 
-H2O'da Doğrusal Regresyon, Temel Bileşen Analizi (PCA), Lojistik Regresyon, K-Means, Stacking hazır olarak bulunmaktaydı. H2O'daki makine öğrenmesi kütüphaneleri kullanılarak uygulanmıştır.
+## Proposed Extension Data Mining Engine API
 
-FP-Growth Apache Spark'ta hazır olarak bulunmaktaydı. Spark MLlib kullanılarak uygulanmıştır.
+<img align="left" src="img/proposedDME.png">
 
-Mahalanobis Mesafesi hesaplama, Çoklu İmputasyon, Bilgi Kazancı yöntemi, Apriori yöntemleri Apache Spark ve H2O veri işleme fonksiyonları kullanılarak geliştirilmiştir.
+## Dependencies
 
-Projede kullanıcı kullanımı sunmak için arayüz eklenmiştir. Arayüz Java swing kullanılarak yapılmıştır. Ancak algoritmaların uygulanması ve geliştirilmesi için Python programlama dili tercih edilmiştir. Arayüzde ilgili algoritma çalıştırılmak istendiğinde arka planda Python scriptleri koşturulmaktadır.
+- Linux/OS X/Windows
+- Java 1.8+
+- Python 2.7+ For Python version of Sparkling Water (PySparkling)
 
-## Sistemin Kurulması
+- Sparkling Water  (Follow [this link](http://docs.h2o.ai/sparkling-water/2.4/latest-stable/doc/pysparkling.html#pysparkling))
 
-Öncelikle sistemde HDFS (Hadoop Distributed File System) kullanılabilmesi için hadoop platformunun kurulması gerekmektedir. 
+- Spark and `SPARK_HOME` shell variable must point to your local Spark installation
 
-1- Ubuntu Üzerinde Hadoop Kurulumu yapılır. Aşağıdaki linkteki adımlar takip edilerek sanal makineler üzerine Hadoop ve HDFS kurulur.
+- H2O
 
-https://medium.com/@dauut/ubuntu-%C3%BCzerine-da%C4%9F%C4%B1t%C4%B1k-multi-node-hadoop-2-7-2-ve-hbase-1-2-0-kurulumu-56190d81baa5
+- Hadoop  
 
-2- Spark kurulumu için Sanal makineler kullanılıyorsa her bir sanal makineye Spark yüklenmelidir. https://spark.apache.org/downloads.html sitesinden Apache Spark indirilir. Spark'ın bulunduğu dosya yolu sisteme kaydedilir. (Terminale ~/.bashrc komutunu yaz ve dosya yollarını ekle)
 
-Apache Spark'ın Hadoop kurulu bir sisteme kurulmasının basitçe anlatıldığı site: https://chongyaorobin.wordpress.com/2015/07/01/step-by-step-of-installing-apache-spark-on-apache-hadoop/
+## How to Run
 
-3- pip3 install h2o_pysparkling_2.2 komutu ile pysparkling yüklenir. (Anaconda varsa uygun komut internetten bulunmalı)
+- Activate Hadoop
 
-4- pip3 install findspark ile Python kodlarında kullanılan findspark kütüphanesi yüklenir.
+  ```
+  $ start-all.sh
+  ```
 
-Ve kurulum tamamlanır.
+  See which ports active
 
-## Çalıştırılması :
+  ```
+  $ jps
+  ```
 
-Öncelikle Hadoop ve Spark platformları aktif hale getirilmelidir.
+  Should be seen `DataNode`, `ResourceManager`, `NameNode`, `SecondaryNameNode`, `NodeManager` ports are active
 
-Bunun için öncelikle **HDFS'i çalıştırmak için terminale start-all.sh** yazılır.
+  __NOTE:__ HDFS interface can be accessed from __localhost:50070__
 
-Ardından terminale yazılan jps komutu ile DataNode, ResourceManager, NameNode, SecondaryNameNode, NodeManager portlarının aktif hale geldiği görülür.
+- Activate Spark from `$SPARK_HOME/sbin` directory
 
-Ayrıca browser'dan localhost:50070 ile HDFS arayüzüne erişilebilir ve oradaki node sayıları, veri setleri vb. bilgiler görüntülenebilir.
+  ```
+  $ ./start-all.sh
+  ```
 
-Spark'ı çalıştırmak için öncelikle Spark'ın yüklü olduğu klasöre gidilir ve sbin klasörüne girilir. 
+  `Master` and `Slave` nodes are activated
 
-Ardından **./start-all.sh** komutu ile Spark'ın Master ve Slave node'ları aktif hale getirilir.
+  __NOTE:__ Spark interface can be accessed from __localhost:8080__
 
-Browser'a localhost:8080 yazılarak Spark'ın arayüzüne ulaşılabilir ve çalışan node'lar görüntülenebilir. Local'de sadece 1 node çalışır. Sanal makinelere kurulan diğer Spark'lar ile birden çok node olabilir. 
+- Run the __BIGDATAPROJE.jar__ in `/dist` directory. 
 
-Projede GUI jar dosyası üzerinden çalıştırılmalıdır. Netbeans veya eclipse üzerinden çalıştırıldığında sistem Spark, Hadoop dosya yollarını göremeyeceğinden hata verebilir. 
+  ```
+  $ java -jar BIGDATAPROJE.jar
+  ```
 
-Kullanıcı arayüzünde çalıştırılan her bir algoritma için arka planda Python scripti çalışmaktadır. Dosya yolu bulunamadı gibi bir hata durumunda kod içerisindeki Python kodlarının dosya yolu kontrol edilmelidir.
+- Algorithms can be run from GUI.
 
-NOT: Kod üzerinden arayüz çalıştırılmak istenirse önce kaynak kodunda python scriptlerinin bulunduğu dosya yolu ve jar dosyasının bulunduğu dosya yolu güncellenmelidir. 'Clean and build' ile yeni jar dosyası oluşturulmalıdır. Oluşturulan .jar dosyasının bulunduğu klasöre bir üst klasörde bulunan HdfsReader.jar dosyası kopyalanmalıdır. Çünkü GUI'de veri seti görüntülenmek istendiğinde HdfsReader.jar dosyası kullanılmaktadır. Ve en son terminalden jar dosyası çalıştırılmalıdır.
+  ![exmp](img/ss.png)
 
-Proje çalıştırılması tamamlandığında bilgisayarı kapatmadan:
+- In the end stop the Spark and Hadoop.
 
-1- /home/cansu/spark/spark-2.2.1-bin-hadoop2.7/sbin dosya yoluna gidilmeli ve **./stop-all.sh** komutu ile Spark kapatılmalı.
+  Stop Spark from `$SPARK_HOME/sbin`:
 
-2- Sonra **stop-all.sh** komutu ile HDFS kapatılmalı. 
+  ```
+  $ ./stop-all.sh
+  ```
+
+  Stop Hadoop: (from any directory)
+
+  ```
+  $ stop-all.sh
+  ```
+
+
+## Notebooks
+
+There is also ipython notebooks generated for each algorithms implemented in Sparkling Water platform.
+
+| Data Mining Steps   | Algorithm                    | Notebook                  | Description                                                  |
+| ------------------- | :--------------------------- | :------------------------ | ------------------------------------------------------------ |
+| Outliers Analysis   | Mahalanobis Distance         | [Mahalanobis](xx)         | Implement mahalanobis distance in Sparkling Water.           |
+| Imputing            | Linear Regression            | [linear-regression](xx)   | Implement linear regression in Sparkling Water.              |
+| Imputing            | Multiple Imputation          | [multiple-imputation](xx) | Implement multiple imputation in Sparkling Water.            |
+| Dimension Reduction | Principal Component Analysis | [pca](xx)                 | Implement PCA in Sparkling Water.                            |
+| Feature Selection   | Information Gain             | [information-gain](xx)    | Implement information gain algorithm in Sparkling Water.     |
+| Classification      | Logistic Regression          | [logistic-regression](xx) | Implement logistic regression in Sparkling Water.            |
+| Clustering          | K-Means                      | [k-means](xx)             | Implement K-Means in Sparkling Water.                        |
+| vfvdevfde           | FP-Growth                    | [fp-growth](xx)           | Implement FP-Growth in Sparkling Water.                      |
+| Ensemble Learning   | Stacking                     | [stacking](xx)            | Implement Stacking that includes Random Forest and Gradient Boosting inside in Sparkling Water |
+
+## Citation
+
+If you use this implementation in your work, please cite the following:
+
+E. Cansu Yıldız, M. S. Aktas, O. Kalıpsız, A. N. Kanlı and U. O. Turgut,
+"Data Mining Library for Big Data Processing Platforms: A Case 
+Study-Sparkling Water Platform," *2018 3rd International Conference on Computer Science and Engineering (UBMK)*, Sarajevo, 2018, pp. 167-172.
+doi: 10.1109/UBMK.2018.8566278     [view](URL: <http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8566278&isnumber=8566244>)
+
+## References
+
+[1] http://docs.h2o.ai/sparkling-water/2.4/latest-stable/doc/pysparkling.html#what-is-sparkling-water
+
