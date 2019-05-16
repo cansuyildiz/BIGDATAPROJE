@@ -11,6 +11,7 @@ on each node of a Spark cluster and access data stored in data structures of Spa
 
 <img align="left" src="img/proposedDME.png">
 
+
 ## Dependencies
 
 - Linux/OS X/Windows
