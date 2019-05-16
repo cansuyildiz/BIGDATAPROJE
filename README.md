@@ -1,5 +1,7 @@
 # Data Mining Library for Sparkling Water Platform
 
+__AUTHOR: ELİF CANSU YILDIZ__
+
 [TOC]
 
 ## Sparkling Water Platform
