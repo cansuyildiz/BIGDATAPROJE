@@ -1,15 +1,13 @@
 # Data Mining Library for Sparkling Water Platform
 
-__AUTHOR: ELİF CANSU YILDIZ__
-
-   * [Data Mining Library for Sparkling Water Platform](#data-mining-library-for-sparkling-water-platform)
-      * [Sparkling Water Platform](#sparkling-water-platform)
-      * [Proposed Extension Data Mining Engine API](#proposed-extension-data-mining-engine-api)
-      * [Dependencies](#dependencies)
-      * [How to Run](#how-to-run)
-      * [Notebooks](#notebooks)
-      * [Citation](#citation)
-      * [References](#references)
+ * [Data Mining Library for Sparkling Water Platform](#data-mining-library-for-sparkling-water-platform)
+    * [Sparkling Water Platform](#sparkling-water-platform)
+    * [Proposed Extension Data Mining Engine API](#proposed-extension-data-mining-engine-api)
+    * [Dependencies](#dependencies)
+    * [How to Run](#how-to-run)
+    * [Notebooks](#notebooks)
+    * [Citation](#citation)
+    * [References](#references)
 
 
 ## Sparkling Water Platform
