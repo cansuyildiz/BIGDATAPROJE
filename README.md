@@ -94,15 +94,15 @@ There is also ipython notebooks generated for each algorithms implemented in Spa
 
 | Data Mining Steps   | Algorithm                    | Notebook                  | Description                                                  |
 | ------------------- | :--------------------------- | :------------------------ | ------------------------------------------------------------ |
-| Outliers Analysis   | Mahalanobis Distance         | [Mahalanobis](xx)         | Implement mahalanobis distance in Sparkling Water.           |
-| Imputing            | Linear Regression            | [linear-regression](xx)   | Implement linear regression in Sparkling Water.              |
-| Imputing            | Multiple Imputation          | [multiple-imputation](xx) | Implement multiple imputation in Sparkling Water.            |
-| Dimension Reduction | Principal Component Analysis | [pca](xx)                 | Implement PCA in Sparkling Water.                            |
-| Feature Selection   | Information Gain             | [information-gain](xx)    | Implement information gain algorithm in Sparkling Water.     |
-| Classification      | Logistic Regression          | [logistic-regression](xx) | Implement logistic regression in Sparkling Water.            |
-| Clustering          | K-Means                      | [k-means](xx)             | Implement K-Means in Sparkling Water.                        |
-| vfvdevfde           | FP-Growth                    | [fp-growth](xx)           | Implement FP-Growth in Sparkling Water.                      |
-| Ensemble Learning   | Stacking                     | [stacking](xx)            | Implement Stacking that includes Random Forest and Gradient Boosting inside in Sparkling Water |
+| Outliers Analysis   | Mahalanobis Distance         | [Mahalanobis](xx) (Under Construction)         | Implement mahalanobis distance in Sparkling Water.           |
+| Imputing            | Linear Regression            | [linear-regression](xx) (Under Construction)   | Implement linear regression in Sparkling Water.              |
+| Imputing            | Multiple Imputation          | [multiple-imputation](xx) (Under Construction) | Implement multiple imputation in Sparkling Water.            |
+| Dimension Reduction | Principal Component Analysis | [pca](xx) (Under Construction)               | Implement PCA in Sparkling Water.                            |
+| Feature Selection   | Information Gain             | [information-gain](xx) (Under Construction)   | Implement information gain algorithm in Sparkling Water.     |
+| Classification      | Logistic Regression          | [logistic-regression](xx) (Under Construction) | Implement logistic regression in Sparkling Water.            |
+| Clustering          | K-Means                      | [k-means](xx) (Under Construction)             | Implement K-Means in Sparkling Water.                        |
+| vfvdevfde           | FP-Growth                    | [fp-growth](xx) (Under Construction)          | Implement FP-Growth in Sparkling Water.                      |
+| Ensemble Learning   | Stacking                     | [stacking](xx) (Under Construction)           | Implement Stacking that includes Random Forest and Gradient Boosting inside in Sparkling Water |
 
 ## Citation
 
