@@ -101,7 +101,7 @@ There is also ipython notebooks generated for each algorithms implemented in Spa
 | Feature Selection   | Information Gain             | [information-gain](xx) (Under Construction)   | Implement information gain algorithm in Sparkling Water.     |
 | Classification      | Logistic Regression          | [logistic-regression](xx) (Under Construction) | Implement logistic regression in Sparkling Water.            |
 | Clustering          | K-Means                      | [k-means](xx) (Under Construction)             | Implement K-Means in Sparkling Water.                        |
-| vfvdevfde           | FP-Growth                    | [fp-growth](xx) (Under Construction)          | Implement FP-Growth in Sparkling Water.                      |
+| Association Rules           | FP-Growth                    | [fp-growth](xx) (Under Construction)          | Implement FP-Growth in Sparkling Water.                      |
 | Ensemble Learning   | Stacking                     | [stacking](xx) (Under Construction)           | Implement Stacking that includes Random Forest and Gradient Boosting inside in Sparkling Water |
 
 ## Citation
